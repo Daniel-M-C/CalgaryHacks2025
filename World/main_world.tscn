@@ -6,3 +6,4 @@
 
 [node name="DraggablePlatform" parent="." instance=ExtResource("1_16qqv")]
 position = Vector2(345, 212)
+lock_x = true
