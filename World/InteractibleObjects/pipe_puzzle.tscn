@@ -1,0 +1,106 @@
+[gd_scene load_steps=2 format=3 uid="uid://bl62rm785ghlx"]
+
+[ext_resource type="PackedScene" uid="uid://c8bp1lii36kv7" path="res://World/InteractibleObjects/pipe_section.tscn" id="1_g2en0"]
+
+[node name="PipePuzzle" type="GridContainer"]
+anchors_preset = -1
+anchor_left = 0.544
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.43201
+offset_right = -2.43201
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 12
+columns = 6
+
+[node name="PipeSection" parent="." instance=ExtResource("1_g2en0")]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="PipeSection2" parent="." instance=ExtResource("1_g2en0")]
+layout_mode = 2
+
+[node name="PipeSection3" parent="." instance=ExtResource("1_g2en0")]
+layout_mode = 2
+
+[node name="PipeSection4" parent="." instance=ExtResource("1_g2en0")]
+layout_mode = 2
+
+[node name="PipeSection5" parent="." instance=ExtResource("1_g2en0")]
+layout_mode = 2
+
+[node name="PipeSection6" parent="." instance=ExtResource("1_g2en0")]
+layout_mode = 2
+
+[node name="PipeSection7" parent="." instance=ExtResource("1_g2en0")]
+layout_mode = 2
+
+[node name="PipeSection8" parent="." instance=ExtResource("1_g2en0")]
+layout_mode = 2
+
+[node name="PipeSection9" parent="." instance=ExtResource("1_g2en0")]
+layout_mode = 2
+
+[node name="PipeSection10" parent="." instance=ExtResource("1_g2en0")]
+layout_mode = 2
+
+[node name="PipeSection11" parent="." instance=ExtResource("1_g2en0")]
+layout_mode = 2
+
+[node name="PipeSection12" parent="." instance=ExtResource("1_g2en0")]
+layout_mode = 2
+
+[node name="PipeSection13" parent="." instance=ExtResource("1_g2en0")]
+layout_mode = 2
+
+[node name="PipeSection14" parent="." instance=ExtResource("1_g2en0")]
+layout_mode = 2
+
+[node name="PipeSection15" parent="." instance=ExtResource("1_g2en0")]
+layout_mode = 2
+
+[node name="PipeSection16" parent="." instance=ExtResource("1_g2en0")]
+layout_mode = 2
+
+[node name="PipeSection17" parent="." instance=ExtResource("1_g2en0")]
+layout_mode = 2
+
+[node name="PipeSection18" parent="." instance=ExtResource("1_g2en0")]
+layout_mode = 2
+
+[node name="PipeSection19" parent="." instance=ExtResource("1_g2en0")]
+layout_mode = 2
+
+[node name="PipeSection20" parent="." instance=ExtResource("1_g2en0")]
+layout_mode = 2
+
+[node name="PipeSection21" parent="." instance=ExtResource("1_g2en0")]
+layout_mode = 2
+
+[node name="PipeSection22" parent="." instance=ExtResource("1_g2en0")]
+layout_mode = 2
+
+[node name="PipeSection23" parent="." instance=ExtResource("1_g2en0")]
+layout_mode = 2
+
+[node name="PipeSection24" parent="." instance=ExtResource("1_g2en0")]
+layout_mode = 2
+
+[node name="PipeSection25" parent="." instance=ExtResource("1_g2en0")]
+layout_mode = 2
+
+[node name="PipeSection26" parent="." instance=ExtResource("1_g2en0")]
+layout_mode = 2
+
+[node name="PipeSection27" parent="." instance=ExtResource("1_g2en0")]
+layout_mode = 2
+
+[node name="PipeSection28" parent="." instance=ExtResource("1_g2en0")]
+layout_mode = 2
+
+[node name="PipeSection29" parent="." instance=ExtResource("1_g2en0")]
+layout_mode = 2
+
+[node name="PipeSection30" parent="." instance=ExtResource("1_g2en0")]
+layout_mode = 2
