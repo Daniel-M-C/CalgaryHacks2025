@@ -1,4 +1,5 @@
 [gd_scene load_steps=7 format=3 uid="uid://ctkpfei25vhd4"]
+[gd_scene load_steps=12 format=3 uid="uid://ctkpfei25vhd4"]
 
 [ext_resource type="Script" uid="uid://dr5a27ra4y5ll" path="res://player_one.gd" id="1_oi0yx"]
 [ext_resource type="Texture2D" uid="uid://bd4baj72jb54t" path="res://icon.svg" id="2_chexb"]
@@ -24,6 +25,29 @@ radius = 14.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_oi0yx"]
 radius = 15.0
 
+[sub_resource type="Curve" id="Curve_oi0yx"]
+_data = [Vector2(0.0367647, 0.988764), 0.0, 0.0, 0, 0, Vector2(0.911765, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_chexb"]
+curve = SubResource("Curve_oi0yx")
+
+[sub_resource type="Gradient" id="Gradient_qx3xb"]
+colors = PackedColorArray(0.827451, 0, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_0h8gg"]
+gradient = SubResource("Gradient_qx3xb")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_oe7yg"]
+lifetime_randomness = 1.0
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(10, 4, 1)
+gravity = Vector3(0, 50, 0)
+color = Color(0.82881, 2.71939e-06, 5.77569e-07, 1)
+color_ramp = SubResource("GradientTexture1D_0h8gg")
+alpha_curve = SubResource("CurveTexture_chexb")
+
 [node name="PlayerOne" type="CharacterBody2D"]
 script = ExtResource("1_oi0yx")
 
@@ -41,5 +65,10 @@ collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 shape = SubResource("CircleShape2D_oi0yx")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(0, -2)
+amount = 24
+process_material = SubResource("ParticleProcessMaterial_oe7yg")
 
 [connection signal="body_entered" from="HurtBox" to="." method="_on_hurt_box_body_entered"]
