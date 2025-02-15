@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" uid="uid://dwlbrf6fnx8xk" path="res://World/InteractibleObjects/draggable_platform.gd" id="1_dc6ko"]
 
-[node name="DraggablePlatform" type="Node2D"]
+[node name="DraggablePlatform" type="StaticBody2D"]
 script = ExtResource("1_dc6ko")
