@@ -1,3 +1,4 @@
+@tool
 extends StaticBody2D
 
 
@@ -9,8 +10,15 @@ var has_drag_started : bool = false
 
 var drag_start_position : Vector2 = Vector2.ZERO
 
-@export var lock_x : bool = false
-@export var lock_y : bool = false
+# region markers
+@onready var max_x_marker: Marker2D = $MaxX
+@onready var min_x_marker: Marker2D = $MaxX
+@onready var max_y_marker: Marker2D = $MaxY
+@onready var min_y_marker: Marker2D = $MinY
+
+
+
+# endregion
 
 ## The speed at which the platform should retun to it's original position
 ## When the player lets go of it.
@@ -18,6 +26,36 @@ var drag_start_position : Vector2 = Vector2.ZERO
 
 ## The max speed at which the platform can move when it's being dragged.
 @export var move_speed : float = 500
+
+@export var lock_x : bool = false
+@export var lock_y : bool = false
+
+
+## Movement in x will be capped at this value.
+@export var max_x : float = 0:
+	set(val):
+		max_x = val
+		if max_x_marker:
+			max_x_marker.position.x = val
+## Movement in x will be capped at this value.
+@export var min_x : float = 0:
+	set(val):
+		min_x = val
+		if min_x_marker:
+			min_x_marker.position.x = val
+
+## Movement in y will be capped at this value.
+@export var max_y : float = 0:
+	set(val):
+		max_y = val
+		if max_y_marker:
+			max_y_marker.position.y = val
+## Movement in y will be capped at this value.
+@export var min_y : float = 0:
+	set(val):
+		min_y = val
+		if min_y_marker:
+			min_y_marker.position.y = val
 
 func _ready() -> void:
 	pass
@@ -50,7 +88,11 @@ func _process(delta):
 			# this cancels out, but it might be useful later if we want to slow the
 			# platforms down or smth, we can do a multiplier on the position??
 			global_position = global_position.move_toward(  
-												drag_start_position - (drag_start_position - get_global_mouse_position()),
+												get_global_mouse_position().clamp(
+																			# This is an offset, so it has to be clamped 
+																			# to the offset from the start pos
+																			self_start_position + Vector2(min_x,min_y),
+																			self_start_position + Vector2(max_x,max_y) ), 
 												move_speed * delta)
 			
 			if lock_x:

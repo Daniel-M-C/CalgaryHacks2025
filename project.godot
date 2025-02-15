@@ -15,7 +15,6 @@ run/main_scene="res://World/main_world.tscn"
 config/features=PackedStringArray("4.4")
 config/icon="res://icon.svg"
 
-
 [input]
 
 mouse_1={
@@ -27,4 +26,3 @@ mouse_1={
 [layer_names]
 
 2d_physics/layer_4="PlayerHurter"
-
