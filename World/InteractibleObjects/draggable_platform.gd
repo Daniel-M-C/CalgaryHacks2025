@@ -12,6 +12,13 @@ var drag_start_position : Vector2 = Vector2.ZERO
 @export var lock_x : bool = false
 @export var lock_y : bool = false
 
+## The speed at which the platform should retun to it's original position
+## When the player lets go of it.
+@export var return_speed : float = 200
+
+## The max speed at which the platform can move when it's being dragged.
+@export var move_speed : float = 500
+
 func _ready() -> void:
 	pass
 
@@ -42,7 +49,9 @@ func _process(delta):
 			
 			# this cancels out, but it might be useful later if we want to slow the
 			# platforms down or smth, we can do a multiplier on the position??
-			global_position = drag_start_position - (drag_start_position - get_global_mouse_position())
+			global_position = global_position.move_toward(  
+												drag_start_position - (drag_start_position - get_global_mouse_position()),
+												move_speed * delta)
 			
 			if lock_x:
 				global_position.x = self_start_position.x
@@ -52,4 +61,6 @@ func _process(delta):
 		if Input.is_action_just_released("mouse_1"):
 			has_drag_started = false
 			
-			
+	if not has_drag_started:
+		global_position = global_position.move_toward(self_start_position, delta * return_speed)
+		pass
