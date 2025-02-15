@@ -11,7 +11,6 @@ size = Vector2(40, 80)
 [node name="DraggablePlatform" type="StaticBody2D"]
 input_pickable = true
 script = ExtResource("1_4ouxb")
-max_x = 100.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_3bkjc")
@@ -20,7 +19,6 @@ shape = SubResource("RectangleShape2D_3bkjc")
 texture = SubResource("PlaceholderTexture2D_dc6ko")
 
 [node name="MaxX" type="Marker2D" parent="."]
-position = Vector2(100, 0)
 
 [node name="MinX" type="Marker2D" parent="."]
 
