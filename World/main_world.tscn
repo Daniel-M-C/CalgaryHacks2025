@@ -1,11 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://i5nl44n31aam"]
+[gd_scene load_steps=4 format=3 uid="uid://i5nl44n31aam"]
 
 [ext_resource type="PackedScene" uid="uid://dwryfod28727j" path="res://World/InteractibleObjects/draggable_platform.tscn" id="1_16qqv"]
 [ext_resource type="PackedScene" uid="uid://ctkpfei25vhd4" path="res://player_one.tscn" id="2_rocas"]
 [ext_resource type="PackedScene" uid="uid://bhsrdhvqho0uw" path="res://cable.tscn" id="3_r6447"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8rdcw"]
-distance = -2.16852
 
 [node name="MainWorld" type="Node2D"]
 
@@ -16,14 +13,10 @@ lock_x = true
 [node name="PlayerOne" parent="." instance=ExtResource("2_rocas")]
 position = Vector2(391, 425)
 
+[node name="DraggablePlatform2" parent="." instance=ExtResource("1_16qqv")]
+position = Vector2(402, 508)
+scale = Vector2(15.5215, 0.871832)
+lock_y = true
+
 [node name="Cable" parent="." instance=ExtResource("3_r6447")]
-position = Vector2(499, 141)
-scale = Vector2(0.25, 0.25)
-
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(444, 648)
-rotation = 3.12471
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-8.50521, 29.8607)
-shape = SubResource("WorldBoundaryShape2D_8rdcw")
+position = Vector2(484, 232)

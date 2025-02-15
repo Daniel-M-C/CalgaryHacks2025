@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bhsrdhvqho0uw"]
+[gd_scene load_steps=6 format=3 uid="uid://bhsrdhvqho0uw"]
 
+[ext_resource type="Script" uid="uid://bmf7uyi2mx36f" path="res://cable.gd" id="1_3ytm0"]
 [ext_resource type="Texture2D" uid="uid://bd4baj72jb54t" path="res://icon.svg" id="1_omul7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ytm0"]
@@ -13,6 +14,8 @@ height = 100.0
 size = Vector2(113, 114)
 
 [node name="Cable" type="Node2D"]
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_3ytm0")
 
 [node name="CableBlock" type="StaticBody2D" parent="."]
 position = Vector2(0, -2)

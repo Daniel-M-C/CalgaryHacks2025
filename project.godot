@@ -25,6 +25,7 @@ mouse_1={
 
 [layer_names]
 
+2d_physics/layer_1="Tiles"
 2d_physics/layer_4="PlayerHurter"
 
 [rendering]
