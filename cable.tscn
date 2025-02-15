@@ -1,0 +1,117 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhsrdhvqho0uw"]
+
+[ext_resource type="Texture2D" uid="uid://bd4baj72jb54t" path="res://icon.svg" id="1_omul7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ytm0"]
+size = Vector2(116, 118)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jqrxp"]
+radius = 28.0
+height = 100.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lxnu8"]
+size = Vector2(113, 114)
+
+[node name="Cable" type="Node2D"]
+
+[node name="CableBlock" type="StaticBody2D" parent="."]
+position = Vector2(0, -2)
+
+[node name="Sprite2D" type="Sprite2D" parent="CableBlock"]
+texture = ExtResource("1_omul7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CableBlock"]
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_3ytm0")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2(1, 62)
+node_a = NodePath("../CableBlock")
+node_b = NodePath("../CableBody")
+softness = 3.0
+
+[node name="CableBody" type="RigidBody2D" parent="."]
+position = Vector2(1, 129)
+
+[node name="Sprite2D" type="Sprite2D" parent="CableBody"]
+texture = ExtResource("1_omul7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CableBody"]
+shape = SubResource("CapsuleShape2D_jqrxp")
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="."]
+position = Vector2(1, 196)
+node_a = NodePath("../CableBody")
+node_b = NodePath("../CableBody2")
+softness = 3.0
+
+[node name="CableBody2" type="RigidBody2D" parent="."]
+position = Vector2(1, 260)
+
+[node name="Sprite2D" type="Sprite2D" parent="CableBody2"]
+texture = ExtResource("1_omul7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CableBody2"]
+shape = SubResource("CapsuleShape2D_jqrxp")
+
+[node name="PinJoint2D3" type="PinJoint2D" parent="."]
+position = Vector2(0, 326)
+node_a = NodePath("../CableBody2")
+node_b = NodePath("../CableBody3")
+softness = 3.0
+
+[node name="CableBody3" type="RigidBody2D" parent="."]
+position = Vector2(1, 396)
+
+[node name="Sprite2D" type="Sprite2D" parent="CableBody3"]
+texture = ExtResource("1_omul7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CableBody3"]
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_jqrxp")
+
+[node name="PinJoint2D4" type="PinJoint2D" parent="."]
+position = Vector2(1, 470)
+node_a = NodePath("../CableBody3")
+node_b = NodePath("../CableBody4")
+softness = 3.0
+
+[node name="CableBody4" type="RigidBody2D" parent="."]
+position = Vector2(2, 540)
+
+[node name="Sprite2D" type="Sprite2D" parent="CableBody4"]
+texture = ExtResource("1_omul7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CableBody4"]
+shape = SubResource("CapsuleShape2D_jqrxp")
+
+[node name="PinJoint2D5" type="PinJoint2D" parent="."]
+position = Vector2(2, 611)
+node_a = NodePath("../CableBody4")
+node_b = NodePath("../CableBody5")
+softness = 3.0
+
+[node name="CableBody5" type="RigidBody2D" parent="."]
+position = Vector2(2, 684)
+
+[node name="Sprite2D" type="Sprite2D" parent="CableBody5"]
+texture = ExtResource("1_omul7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CableBody5"]
+shape = SubResource("CapsuleShape2D_jqrxp")
+
+[node name="PinJoint2D6" type="PinJoint2D" parent="."]
+position = Vector2(2, 757)
+node_a = NodePath("../CableBody5")
+node_b = NodePath("../CableEnd")
+softness = 3.0
+
+[node name="CableEnd" type="RigidBody2D" parent="."]
+position = Vector2(5, 827)
+
+[node name="Sprite2D" type="Sprite2D" parent="CableEnd"]
+texture = ExtResource("1_omul7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CableEnd"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_lxnu8")
