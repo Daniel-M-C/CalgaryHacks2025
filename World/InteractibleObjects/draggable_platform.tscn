@@ -3,17 +3,27 @@
 [ext_resource type="Script" uid="uid://dk2x67qmiuq77" path="res://World/InteractibleObjects/draggable_platform.gd" id="1_4ouxb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3bkjc"]
-size = Vector2(20, 40)
+size = Vector2(40, 80)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_dc6ko"]
-size = Vector2(20, 40)
+size = Vector2(40, 80)
 
 [node name="DraggablePlatform" type="StaticBody2D"]
 input_pickable = true
 script = ExtResource("1_4ouxb")
+max_x = 100.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_3bkjc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("PlaceholderTexture2D_dc6ko")
+
+[node name="MaxX" type="Marker2D" parent="."]
+position = Vector2(100, 0)
+
+[node name="MinX" type="Marker2D" parent="."]
+
+[node name="MaxY" type="Marker2D" parent="."]
+
+[node name="MinY" type="Marker2D" parent="."]
