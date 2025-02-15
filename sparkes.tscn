@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bruuxa7166cbx"]
+
+[ext_resource type="Script" uid="uid://rf2cvpa0hals" path="res://sparkes.gd" id="1_1f18f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_blsnk"]
+
+[node name="Sparkes" type="Area2D"]
+script = ExtResource("1_1f18f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_blsnk")
