@@ -244,13 +244,13 @@ animations = [{
 _data = [Vector2(0.0367647, 0.988764), 0.0, 0.0, 0, 0, Vector2(0.911765, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CurveTexture" id="CurveTexture_chexb"]
+[sub_resource type="CurveTexture" id="CurveTexture_4yms3"]
 curve = SubResource("Curve_oi0yx")
 
 [sub_resource type="Gradient" id="Gradient_qx3xb"]
 colors = PackedColorArray(0.827451, 0, 0, 1, 1, 1, 1, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_0h8gg"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_x4kdc"]
 gradient = SubResource("Gradient_qx3xb")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_oe7yg"]
@@ -264,8 +264,8 @@ spread = 100.0
 gravity = Vector3(0, 50, 0)
 scale_max = 10.0
 color = Color(0.82881, 2.71939e-06, 5.77569e-07, 1)
-color_ramp = SubResource("GradientTexture1D_0h8gg")
-alpha_curve = SubResource("CurveTexture_chexb")
+color_ramp = SubResource("GradientTexture1D_x4kdc")
+alpha_curve = SubResource("CurveTexture_4yms3")
 
 [node name="PlayerOne" type="CharacterBody2D" groups=["player"]]
 z_index = 3

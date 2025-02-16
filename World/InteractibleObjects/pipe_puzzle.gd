@@ -6,6 +6,7 @@ signal PuzzleFinished
 
 @export var start_pipe : PipeSection
 @export var end_pipe : PipeSection
+@export var color : ColorRect
 
 enum PIPE_COLOR {
 	RED,

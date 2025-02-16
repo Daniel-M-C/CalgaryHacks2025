@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://i5nl44n31aam"]
+[gd_scene load_steps=27 format=4 uid="uid://i5nl44n31aam"]
 
 [ext_resource type="PackedScene" uid="uid://dwryfod28727j" path="res://World/InteractibleObjects/draggable_platform.tscn" id="1_16qqv"]
 [ext_resource type="Script" uid="uid://b5n1cdon6r4qt" path="res://World/camera_2d.gd" id="1_cyt26"]
@@ -392,10 +392,10 @@ anchor_left = 0.199653
 anchor_top = 0.256173
 anchor_right = 0.592014
 anchor_bottom = 0.671296
-offset_left = 27.0
-offset_top = -25.0
-offset_right = 27.0
-offset_bottom = -25.0
+offset_left = 120.0
+offset_top = -25.0001
+offset_right = 120.0
+offset_bottom = -25.0001
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -405,9 +405,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="PipePuzzle" parent="WaterLevel/CanvasLayer" node_paths=PackedStringArray("color") instance=ExtResource("5_8rdcw")]
 visible = false
-offset_left = 122.192
+offset_left = 230.192
 offset_top = -0.671997
-offset_right = 104.376
+offset_right = 212.376
 offset_bottom = 30.48
 color = NodePath("../ColorRect")
 
@@ -418,7 +418,8 @@ scale = Vector2(2.13933, 1.85227)
 texture = ExtResource("7_homsn")
 
 [node name="water" parent="WaterLevel" instance=ExtResource("8_4v305")]
-position = Vector2(1052, 626)
+position = Vector2(277, 634)
+scale = Vector2(0.72, 1)
 
 [node name="DraggablePlatform2" parent="WaterLevel" instance=ExtResource("1_16qqv")]
 position = Vector2(634, 315)
@@ -427,10 +428,8 @@ lock_x = true
 max_y = 300.0
 min_y = 200.0
 
-[node name="WaterWall" type="StaticBody2D" parent="WaterLevel" node_paths=PackedStringArray("pipe_puzzle")]
+[node name="WaterWall" type="StaticBody2D" parent="WaterLevel"]
 position = Vector2(678, 333)
-script = ExtResource("7_homsn")
-pipe_puzzle = NodePath("../CanvasLayer/PipePuzzle")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WaterLevel/WaterWall"]
 shape = SubResource("RectangleShape2D_homsn")
