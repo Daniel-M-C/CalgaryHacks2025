@@ -1,5 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://i5nl44n31aam"]
 
+[ext_resource type="Texture2D" uid="uid://bmwblvaetb8ae" path="res://Assets/Environment/server_bg.png" id="2_qhfov"]
 [ext_resource type="PackedScene" uid="uid://dwryfod28727j" path="res://World/InteractibleObjects/draggable_platform.tscn" id="1_16qqv"]
 [ext_resource type="Script" uid="uid://b5n1cdon6r4qt" path="res://World/camera_2d.gd" id="1_cyt26"]
 [ext_resource type="Texture2D" uid="uid://bmwblvaetb8ae" path="res://Assets/Environment/server_bg.png" id="2_qhfov"]
@@ -9,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bl62rm785ghlx" path="res://World/InteractibleObjects/pipe_puzzle.tscn" id="5_8rdcw"]
 [ext_resource type="PackedScene" uid="uid://bruuxa7166cbx" path="res://World/AnimalInteract/sparkes.tscn" id="6_8h63e"]
 [ext_resource type="PackedScene" uid="uid://e2smnpjo0mfw" path="res://water.tscn" id="8_4v305"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8h63e"]
 size = Vector2(40, 70)
