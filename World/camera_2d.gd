@@ -6,7 +6,7 @@ const move_speed_lerp : float = 1
 
 var level_num : int = 0
 
-@export var puzzle_canvas_layer : Node 
+@export var puzzle_canvas_layer : CanvasLayer 
 
 func _on_camera_trigger_body_entered(body: Node2D) -> void:
 	if is_instance_of(body, Player):#body.get_script() is Player:
@@ -20,3 +20,4 @@ func _process(delta: float) -> void:
 	if global_position.x > level_position_offset - 100 \
 		and puzzle_canvas_layer:
 			puzzle_canvas_layer.visible = true
+			puzzle_canvas_layer.offset.x = level_position_offset - global_position.x
