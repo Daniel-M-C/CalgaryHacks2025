@@ -2,18 +2,18 @@
 
 [ext_resource type="PackedScene" uid="uid://dwryfod28727j" path="res://World/InteractibleObjects/draggable_platform.tscn" id="1_16qqv"]
 [ext_resource type="Script" uid="uid://b5n1cdon6r4qt" path="res://World/camera_2d.gd" id="1_cyt26"]
-[ext_resource type="Texture2D" uid="uid://bmwblvaetb8ae" path="res://Assets/Environment/server_bg.png" id="2_qhfov"]
+[ext_resource type="Texture2D" uid="uid://vx0hdfnpkpc2" path="res://Assets/Environment/server_bg.png" id="2_qhfov"]
 [ext_resource type="PackedScene" uid="uid://ctkpfei25vhd4" path="res://Animal/player_one.tscn" id="2_rocas"]
-[ext_resource type="Texture2D" uid="uid://brdp78tbkcx81" path="res://Assets/Environment/tilemap_nature.png" id="3_hs2qd"]
+[ext_resource type="Texture2D" uid="uid://i0pgre4sjcmg" path="res://Assets/Environment/tilemap_nature.png" id="3_hs2qd"]
 [ext_resource type="PackedScene" uid="uid://bhsrdhvqho0uw" path="res://World/AnimalInteract/cable.tscn" id="3_r6447"]
 [ext_resource type="PackedScene" uid="uid://cvl2y5enk7w5q" path="res://World/AnimalInteract/plug.tscn" id="5_8h63e"]
 [ext_resource type="PackedScene" uid="uid://bl62rm785ghlx" path="res://World/InteractibleObjects/pipe_puzzle.tscn" id="5_8rdcw"]
 [ext_resource type="PackedScene" uid="uid://bruuxa7166cbx" path="res://World/AnimalInteract/sparkes.tscn" id="6_8h63e"]
-[ext_resource type="Texture2D" uid="uid://bfdtw8cd11113" path="res://Assets/comp screen/screen_blink.png" id="7_homsn"]
+[ext_resource type="Texture2D" uid="uid://bmtoy0yl2sp6k" path="res://Assets/comp screen/screen_blink.png" id="7_homsn"]
 [ext_resource type="PackedScene" uid="uid://e2smnpjo0mfw" path="res://water.tscn" id="8_4v305"]
-[ext_resource type="Texture2D" uid="uid://c6ee31o62p5i2" path="res://Assets/Environment/tile_cobble.png" id="10_h3tjc"]
-[ext_resource type="Texture2D" uid="uid://cwdg54x3ob8oo" path="res://Assets/Environment/tile_motherboard.png" id="11_hs2qd"]
-[ext_resource type="Texture2D" uid="uid://mvjft0ealv85" path="res://Assets/Environment/tilemap_tech.png" id="13_6syc8"]
+[ext_resource type="Texture2D" uid="uid://b8t1vs6px1qsn" path="res://Assets/Environment/tile_cobble.png" id="10_h3tjc"]
+[ext_resource type="Texture2D" uid="uid://dcknngv3cpc5p" path="res://Assets/Environment/tile_motherboard.png" id="11_hs2qd"]
+[ext_resource type="Texture2D" uid="uid://doiuuh5igjtsv" path="res://Assets/Environment/tilemap_tech.png" id="13_6syc8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_homsn"]
 size = Vector2(20, 500)
@@ -389,13 +389,13 @@ visible = false
 z_index = -20
 anchors_preset = -1
 anchor_left = 0.199653
-anchor_top = 0.256173
-anchor_right = 0.592014
-anchor_bottom = 0.671296
+anchor_top = 0.223
+anchor_right = 0.729
+anchor_bottom = 0.791
 offset_left = 120.0
-offset_top = -25.0001
+offset_top = -44.504
 offset_right = 120.0
-offset_bottom = -25.0001
+offset_bottom = -44.504
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -413,8 +413,8 @@ color = NodePath("../ColorRect")
 
 [node name="ScreenBlink" type="Sprite2D" parent="WaterLevel/CanvasLayer/PipePuzzle"]
 z_index = -2
-position = Vector2(165, 126)
-scale = Vector2(2.13933, 1.85227)
+position = Vector2(175, 135)
+scale = Vector2(2.542, 2.2)
 texture = ExtResource("7_homsn")
 
 [node name="water" parent="WaterLevel" instance=ExtResource("8_4v305")]
