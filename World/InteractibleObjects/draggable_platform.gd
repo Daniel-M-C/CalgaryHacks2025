@@ -17,6 +17,45 @@ var drag_start_position : Vector2 = Vector2.ZERO
 @onready var min_y_marker: Marker2D = $MinY
 
 
+const SERVER_A = preload("res://Assets/Environment/server_A.png")
+const SERVER_B = preload("res://Assets/Environment/server_B.png")
+const SERVER_C = preload("res://Assets/Environment/server_C.png")
+const SERVER_D = preload("res://Assets/Environment/server_D.png")
+
+@onready var sprite: Sprite2D = $Sprite
+@onready var collision_shape_rect: Shape2D = $CollisionShape2D.shape
+
+enum PLATFORM_TYPE {
+	A,
+	B,
+	C,
+	D
+}
+
+@export var platform_type : PLATFORM_TYPE = PLATFORM_TYPE.A :
+	set(val):
+		platform_type = val
+		
+		if not is_inside_tree():
+			await tree_entered
+			await get_tree().process_frame
+		match platform_type:
+			PLATFORM_TYPE.A:
+				sprite.texture = SERVER_A
+				sprite.scale.x = 2.2
+				collision_shape_rect.size = Vector2(102,165)
+			PLATFORM_TYPE.B:
+				sprite.texture = SERVER_B
+				sprite.scale.x = 2.2
+				collision_shape_rect.size = Vector2(102,165)
+			PLATFORM_TYPE.C:
+				sprite.texture = SERVER_C
+				sprite.scale.x = 2.2
+				collision_shape_rect.size = Vector2(102,165)
+			PLATFORM_TYPE.D:
+				sprite.texture = SERVER_D
+				sprite.scale.x = 2.2
+				collision_shape_rect.size = Vector2(102,165)
 
 # endregion
 
