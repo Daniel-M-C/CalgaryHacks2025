@@ -31,13 +31,37 @@ enum PIPE_COLOR {
 			start_pipe.full = true
 
 func _ready() -> void:
-	#for i in get_children():
-		# re-runs setter because it wasn't working
-		#i.starting_rotation = i.starting_rotation
 	pass
+
+func reset_stuff():
+	for i in get_children():
+		if is_instance_of(i, PipeSection):
+			i.PipeDirectionChanged.connect(re_flow_water)
+			
+			if i.starting_rotation != 0 :
+				i.rotation = i.starting_rotation * PI/2
+				pass
+		# aaaaaa, hopefuly this fixes stuf 
+		#i.pipe_type = i.pipe_type
+		#i.starting_rotation = i.starting_rotation
 	
+
+func re_flow_water():
+	## Resets and flows all pipes
+	for i in get_children():
+			i.full = false
+	if start_pipe:
+			start_pipe.full = true
+	pass
+
 func is_color_active(color : int):
 	## color refs to pipe color.
 	# could just check, but functions are nice.
 	return color == active_color
 	
+
+
+func _on_visibility_changed() -> void:
+	await get_tree().process_frame
+	reset_stuff()
+	pass # Replace with function body.

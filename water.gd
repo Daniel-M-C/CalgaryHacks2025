@@ -6,7 +6,7 @@ enum State {
 	LOWERING
 }
 @export var current_state = State.STILL
-var speed = 2
+var speed = 0.2
 
 func _ready():
 	pass 

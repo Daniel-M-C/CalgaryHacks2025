@@ -1,16 +1,14 @@
 [gd_scene load_steps=12 format=3 uid="uid://i5nl44n31aam"]
 
-[ext_resource type="Texture2D" uid="uid://bmwblvaetb8ae" path="res://Assets/Environment/server_bg.png" id="2_qhfov"]
 [ext_resource type="PackedScene" uid="uid://dwryfod28727j" path="res://World/InteractibleObjects/draggable_platform.tscn" id="1_16qqv"]
 [ext_resource type="Script" uid="uid://b5n1cdon6r4qt" path="res://World/camera_2d.gd" id="1_cyt26"]
-[ext_resource type="Texture2D" uid="uid://bmwblvaetb8ae" path="res://Assets/Environment/server_bg.png" id="2_qhfov"]
+[ext_resource type="Texture2D" uid="uid://vx0hdfnpkpc2" path="res://Assets/Environment/server_bg.png" id="2_qhfov"]
 [ext_resource type="PackedScene" uid="uid://ctkpfei25vhd4" path="res://Animal/player_one.tscn" id="2_rocas"]
 [ext_resource type="PackedScene" uid="uid://bhsrdhvqho0uw" path="res://World/AnimalInteract/cable.tscn" id="3_r6447"]
 [ext_resource type="PackedScene" uid="uid://cvl2y5enk7w5q" path="res://World/AnimalInteract/plug.tscn" id="5_8h63e"]
 [ext_resource type="PackedScene" uid="uid://bl62rm785ghlx" path="res://World/InteractibleObjects/pipe_puzzle.tscn" id="5_8rdcw"]
 [ext_resource type="PackedScene" uid="uid://bruuxa7166cbx" path="res://World/AnimalInteract/sparkes.tscn" id="6_8h63e"]
-[ext_resource type="PackedScene" uid="uid://e2smnpjo0mfw" path="res://water.tscn" id="8_4v305"]
-
+[ext_resource type="PackedScene" path="res://water.tscn" id="8_4v305"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8h63e"]
 size = Vector2(40, 70)
@@ -20,12 +18,16 @@ tile_size = Vector2i(32, 32)
 
 [node name="MainWorld" type="Node2D"]
 
-[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player", "water")]
-position = Vector2(-376, -16)
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("puzzle_node", "player", "water")]
 offset = Vector2(576, 324)
 script = ExtResource("1_cyt26")
+puzzle_node = NodePath("../WaterLevel/CanvasLayer/PipePuzzle")
+checkpoint_positions = Array[Vector2]([Vector2(70, 440), Vector2(1240, 354)])
 player = NodePath("../PlayerOne")
 water = NodePath("../WaterLevel/water")
+
+[node name="Marker2D" type="Marker2D" parent="Camera2D"]
+position = Vector2(1239, 370)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -155,7 +157,7 @@ scale = Vector2(2.50781, 2.50781)
 texture = ExtResource("2_qhfov")
 
 [node name="WaterLevel" type="Node2D" parent="."]
-position = Vector2(1355, -20)
+position = Vector2(1183, -20)
 
 [node name="DraggablePlatform" parent="WaterLevel" instance=ExtResource("1_16qqv")]
 position = Vector2(345, 212)
@@ -163,7 +165,7 @@ lock_x = true
 
 [node name="DraggablePlatform2" parent="WaterLevel" instance=ExtResource("1_16qqv")]
 position = Vector2(402, 508)
-scale = Vector2(15.5215, 0.871832)
+scale = Vector2(11.526, 0.872)
 lock_y = true
 max_x = 1e+07
 min_x = -1e+08
@@ -177,9 +179,12 @@ flow_puzzle = NodePath("../CanvasLayer/PipePuzzle")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="WaterLevel"]
 layer = -2
-visible = false
 
 [node name="PipePuzzle" parent="WaterLevel/CanvasLayer" instance=ExtResource("5_8rdcw")]
+anchor_left = 0.093
+anchor_top = 0.069
+anchor_right = 0.542
+anchor_bottom = 0.571
 
 [node name="water" parent="WaterLevel" instance=ExtResource("8_4v305")]
 position = Vector2(900, 638)
@@ -197,7 +202,11 @@ gizmo_extents = 456.6
 
 [node name="Start2" parent="JumpingLevel" instance=ExtResource("1_16qqv")]
 position = Vector2(-356, 523)
-scale = Vector2(10, 0.3)
+scale = Vector2(7.85, 0.3)
+
+[node name="Start3" parent="JumpingLevel" instance=ExtResource("1_16qqv")]
+position = Vector2(-474, 577)
+scale = Vector2(11.67, 0.18)
 
 [node name="Floor" parent="JumpingLevel" instance=ExtResource("1_16qqv")]
 position = Vector2(1294, 632)
@@ -230,7 +239,7 @@ position = Vector2(446.5, 490)
 position = Vector2(646.5, 490)
 
 [node name="CameraTrigger" type="Area2D" parent="JumpingLevel"]
-position = Vector2(1083, 456)
+position = Vector2(884, 387)
 collision_layer = 65536
 collision_mask = 65536
 
