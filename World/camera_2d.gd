@@ -11,6 +11,7 @@ const move_speed_lerp : float = 1
 var level_num : int = 0
 
 @export var puzzle_node : Node 
+@export var win_menu : Control 
 
 ## Positions the player will respawn in.
 ## a checkpoint is reached every camera position change.
@@ -45,3 +46,8 @@ func reset_level():
 	player.global_position = checkpoint_positions[level_num]
 	# TODO also reset the water level and reset the pipes?? (that sounds hard)
 	water.scale.y = 1
+
+
+func _on_game_won(body: Node2D) -> void:
+	win_menu.visible = true
+	pass # Replace with function body.

@@ -1,53 +1,61 @@
-[gd_scene load_steps=15 format=3 uid="uid://j81n70ulqdnl"]
+[gd_scene load_steps=17 format=3 uid="uid://cpytixgxn2gc3"]
 
-[ext_resource type="Texture2D" uid="uid://c0c4k43fpbac0" path="res://Assets/heretic-menu-game.png" id="1_06t4h"]
-[ext_resource type="Script" path="res://main_menu.gd" id="1_7vrkn"]
-[ext_resource type="Texture2D" uid="uid://bn7ap3hbi6fl6" path="res://Assets/title screen animated/Untitled_Artwork-5.png" id="2_qe12f"]
-[ext_resource type="Texture2D" uid="uid://jrfau1kuys65" path="res://Assets/title screen animated/Untitled_Artwork-4.png" id="3_8qtwp"]
-[ext_resource type="Texture2D" uid="uid://cbo6wejds8fji" path="res://Assets/title screen animated/Untitled_Artwork-3.png" id="4_dy7ct"]
-[ext_resource type="Texture2D" uid="uid://buy8ya086xrwr" path="res://Assets/title screen animated/Untitled_Artwork-2.png" id="5_0o4t1"]
-[ext_resource type="Texture2D" uid="uid://8xuwy2ghualk" path="res://Assets/title screen animated/Untitled_Artwork-1.png" id="6_0k4wn"]
+[ext_resource type="Script" path="res://main_menu.gd" id="1_frsyg"]
+[ext_resource type="Texture2D" uid="uid://bn7ap3hbi6fl6" path="res://Assets/title screen animated/Untitled_Artwork-5.png" id="2_qvaom"]
+[ext_resource type="Texture2D" uid="uid://jrfau1kuys65" path="res://Assets/title screen animated/Untitled_Artwork-4.png" id="3_8lxq1"]
+[ext_resource type="Texture2D" uid="uid://cbo6wejds8fji" path="res://Assets/title screen animated/Untitled_Artwork-3.png" id="4_g7srb"]
+[ext_resource type="Texture2D" uid="uid://buy8ya086xrwr" path="res://Assets/title screen animated/Untitled_Artwork-2.png" id="5_7pd2s"]
+[ext_resource type="Texture2D" uid="uid://8xuwy2ghualk" path="res://Assets/title screen animated/Untitled_Artwork-1.png" id="6_07nld"]
+[ext_resource type="Texture2D" uid="uid://c0c4k43fpbac0" path="res://Assets/heretic-menu-game.png" id="7_tlbk2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_j5v2v"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_qe12f")
+"texture": ExtResource("2_qvaom")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_8qtwp")
+"texture": ExtResource("3_8lxq1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_dy7ct")
+"texture": ExtResource("4_g7srb")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_0o4t1")
+"texture": ExtResource("5_7pd2s")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_0k4wn")
+"texture": ExtResource("6_07nld")
 }],
 "loop": true,
 "name": &"default",
 "speed": 1.0
 }]
 
-[sub_resource type="SystemFont" id="SystemFont_dy7ct"]
+[sub_resource type="SystemFont" id="SystemFont_frsyg"]
 font_names = PackedStringArray("Karumbi")
 
-[sub_resource type="LabelSettings" id="LabelSettings_0o4t1"]
+[sub_resource type="LabelSettings" id="LabelSettings_qvaom"]
 font_size = 91
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fu7sn"]
-
-[sub_resource type="SystemFont" id="SystemFont_qe12f"]
-font_names = PackedStringArray("Karumbi", "Comfortaa", "AR PL UMing CN", "Andika")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jix8l"]
 
 [sub_resource type="SystemFont" id="SystemFont_8qtwp"]
 font_names = PackedStringArray("Karumbi")
 
-[node name="MainMenu" type="Control"]
+[sub_resource type="SystemFont" id="SystemFont_qe12f"]
+font_names = PackedStringArray("Karumbi", "Comfortaa", "AR PL UMing CN", "Andika")
+
+[sub_resource type="Gradient" id="Gradient_frsyg"]
+offsets = PackedFloat32Array(0, 0.151163, 0.982558, 1)
+colors = PackedColorArray(0.933333, 0, 0.843137, 1, 0.156977, 0.156977, 0.156977, 1, 0.529408, 0.529408, 0.529408, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qvaom"]
+gradient = SubResource("Gradient_frsyg")
+fill_to = Vector2(0, 0)
+
+[node name="WinMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -56,7 +64,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource("1_7vrkn")
+script = ExtResource("1_frsyg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 1
@@ -89,7 +97,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 64
-theme_override_constants/margin_top = 194
+theme_override_constants/margin_top = 64
 theme_override_constants/margin_right = 64
 theme_override_constants/margin_bottom = 64
 metadata/_edit_use_anchors_ = true
@@ -99,11 +107,12 @@ layout_mode = 2
 
 [node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 
 [node name="Heretic-menu-game" type="Sprite2D" parent="MarginContainer/VBoxContainer/CenterContainer"]
 visible = false
 position = Vector2(380, 68)
-texture = ExtResource("1_06t4h")
+texture = ExtResource("7_tlbk2")
 
 [node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/CenterContainer/Heretic-menu-game"]
 z_index = -1
@@ -120,9 +129,10 @@ grow_vertical = 2
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/CenterContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_fonts/font = SubResource("SystemFont_dy7ct")
-text = "ACT and ABB"
-label_settings = SubResource("LabelSettings_0o4t1")
+theme_override_fonts/font = SubResource("SystemFont_frsyg")
+text = "Congratulations! 
+ACT helped ABB excape."
+label_settings = SubResource("LabelSettings_qvaom")
 horizontal_alignment = 1
 
 [node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer"]
@@ -135,13 +145,8 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_fu7sn")
 layout_mode = 2
 alignment = 1
 
-[node name="Start" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = SubResource("SystemFont_qe12f")
-theme_override_font_sizes/font_size = 64
-text = "Start"
-
-[node name="VSeparator" type="VSeparator" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="VSeparator2" type="VSeparator" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+visible = false
 layout_mode = 2
 theme_override_constants/separation = 64
 theme_override_styles/separator = SubResource("StyleBoxEmpty_jix8l")
@@ -151,6 +156,19 @@ layout_mode = 2
 theme_override_fonts/font = SubResource("SystemFont_8qtwp")
 theme_override_font_sizes/font_size = 64
 text = "Quit"
+
+[node name="Start" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_qe12f")
+theme_override_font_sizes/font_size = 64
+text = "Start"
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 64
+theme_override_styles/separator = SubResource("StyleBoxEmpty_jix8l")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 visible = false
@@ -183,7 +201,16 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 64
 text = "Yes leave"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Start" to="." method="_on_start_pressed"]
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+z_index = 1
+texture = SubResource("GradientTexture2D_qvaom")
+emission_shape = 3
+emission_rect_extents = Vector2(1000, 550)
+direction = Vector2(1, 5)
+initial_velocity_min = 51.54
+initial_velocity_max = 278.35
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer/Nevermind" to="." method="_on_nevermind_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer/Leave" to="." method="_on_leave_pressed"]

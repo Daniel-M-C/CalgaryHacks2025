@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://i5nl44n31aam"]
+[gd_scene load_steps=34 format=4 uid="uid://i5nl44n31aam"]
 
 [ext_resource type="PackedScene" uid="uid://dwryfod28727j" path="res://World/InteractibleObjects/draggable_platform.tscn" id="1_16qqv"]
 [ext_resource type="Script" uid="uid://b5n1cdon6r4qt" path="res://World/camera_2d.gd" id="1_cyt26"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://b8t1vs6px1qsn" path="res://Assets/Environment/tile_cobble.png" id="10_h3tjc"]
 [ext_resource type="Texture2D" uid="uid://dcknngv3cpc5p" path="res://Assets/Environment/tile_motherboard.png" id="11_hs2qd"]
 [ext_resource type="Texture2D" uid="uid://doiuuh5igjtsv" path="res://Assets/Environment/tilemap_tech.png" id="13_6syc8"]
+[ext_resource type="PackedScene" uid="uid://cpytixgxn2gc3" path="res://win_menu.tscn" id="15_pwl74"]
 
 [sub_resource type="Gradient" id="Gradient_pwl74"]
 offsets = PackedFloat32Array(0, 0.956395, 1)
@@ -243,10 +244,11 @@ sources/0 = SubResource("TileSetAtlasSource_syrwj")
 
 [node name="MainWorld" type="Node2D"]
 
-[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("puzzle_node", "player", "water")]
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("puzzle_node", "win_menu", "player", "water")]
 offset = Vector2(576, 324)
 script = ExtResource("1_cyt26")
 puzzle_node = NodePath("../WaterLevel/CanvasLayer/PipePuzzle")
+win_menu = NodePath("../WinMenu")
 checkpoint_positions = Array[Vector2]([Vector2(70, 440), Vector2(1240, 354), Vector2(2170, 360)])
 player = NodePath("../PlayerOne")
 water = NodePath("../WaterLevel/water")
@@ -626,5 +628,9 @@ position = Vector2(103, -37)
 tile_map_data = PackedByteArray("AAD4/wQAAAAAAAAAAAADAAQAAAAAAAAAAAAOAAIAAAAAAAAAAAAfAAEAAAAAAAAAAAApAAIAAAAAAAAAAAArAAIAAAAAAAAAAAAOAAMAAAAAAAAAAAAMAAMAAAAAAAAAAAADAAUAAAAAAAAAAAAAAAYAAAAAAAAAAAD6/wYAAAAAAAAAAAD5/wYAAAAAAAAAAAApAAwAAAAFAAUAAAAqAAwAAAADAAMAAAD//wwAAAABAAMAAAAmAAsAAAADAAMAAAD4/wgAAAAAAAUAAAAPAA0AAAAAAAUAAAAQAAsAAAADAAMAAAAUAA0AAAABAAMAAAAbAAoAAAADAAUAAAAhAAwAAAADAAUAAAAiAAwAAAAFAAUAAAAjAAwAAAADAAUAAAAlAAsAAAADAAMAAAAmAAoAAAABAAMAAAApAAoAAAAAAAUAAAAqAAoAAAADAAUAAAAtAAwAAAAFAAUAAAD7/wcAAAAAAAAAAAD8/wcAAAAAAAAAAAD9/wcAAAAAAAAAAAD//wUAAAAAAAAAAAD//wcAAAAAAAAAAAAAAAcAAAAAAAAAAAABAAYAAAAAAAAAAAADAAYAAAAAAAAAAAAEAAYAAAAAAAAAAAAFAAQAAAAAAAAAAAAHAAMAAAAAAAAAAAAKAAMAAAAAAAAAAAALAAUAAAAAAAAAAAAMAAQAAAAAAAAAAAANAAQAAAAAAAAAAAAOAAQAAAAAAAAAAAAPAAIAAAAAAAAAAAAQAAIAAAAAAAAAAAAQAAQAAAAAAAAAAAARAAIAAAAAAAAAAAASAAEAAAAAAAAAAAAUAAEAAAAAAAAAAAAUAAMAAAAAAAAAAAAXAAIAAAAAAAAAAAAZAAAAAAAAAAAAAAAZAAIAAAAAAAAAAAAaAAAAAAAAAAAAAAAbAAIAAAAAAAAAAAAcAAIAAAAAAAAAAAAdAAEAAAAAAAAAAAAfAAIAAAAAAAAAAAAjAAEAAAAAAAAAAAAmAAEAAAAAAAAAAAAnAAEAAAAAAAAAAAAoAAIAAAAAAAAAAAApAAMAAAAAAAAAAAAqAAMAAAAAAAAAAAArAAMAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_f5gnd")
 
+[node name="WinMenu" parent="." instance=ExtResource("15_pwl74")]
+visible = false
+
 [connection signal="body_entered" from="JumpingLevel/CameraTrigger" to="Camera2D" method="_on_camera_trigger_body_entered"]
 [connection signal="body_entered" from="JumpingLevel/CameraTrigger2" to="Camera2D" method="_on_camera_trigger_body_entered"]
+[connection signal="body_entered" from="JumpingLevel/CameraTrigger2" to="Camera2D" method="_on_game_won"]
