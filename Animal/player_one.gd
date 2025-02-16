@@ -11,7 +11,7 @@ var still_jumping = false
 var in_water = false
 var drowning_time = 5
 var temp_sprite = ""
-var caotye_time = 0.2
+var caotye_time = 0.5
 
 signal Died
 @onready var sprite = $Sprite/AnimatedSprite2D
@@ -71,7 +71,7 @@ func _physics_process(delta):
 				sprite.play("sit")
 			elif temp_sprite == "":
 				sprite.play("idle")
-			caotye_time = 0.2
+			caotye_time = 0.5
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	if in_water:
 		velocity.x /= 1.25
@@ -114,7 +114,8 @@ func heal_health(amount):
 	if hp > 40:
 		$Sprite/GPUParticles2D.emitting = false
 
-func _on_hurt_box_area_entered(area: Area2D) -> void:
+
+func _on_hurt_box_area_entered(area) -> void:
 	if area.get("damage"):
 		take_damage(area.damage)
 	else:
@@ -159,3 +160,11 @@ func interact(action_object: Node):
 func _on_animated_sprite_2d_animation_finished():
 	still_jumping = false
 	pass 
+
+
+func _on_hurt_box_body_entered(body):
+	if body.get("damage"):
+		take_damage(body.damage)
+	else:
+		take_damage(10)
+	pass # Replace with function body.

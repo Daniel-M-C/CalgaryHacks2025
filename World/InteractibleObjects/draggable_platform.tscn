@@ -9,6 +9,7 @@ size = Vector2(102, 165)
 [node name="DraggablePlatform" type="StaticBody2D"]
 input_pickable = true
 script = ExtResource("1_4ouxb")
+damage = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_3bkjc")

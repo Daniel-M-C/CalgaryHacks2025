@@ -5,6 +5,7 @@ extends StaticBody2D
 # There might be a built in way to do this
 var is_mouse_in_shape : bool = false
 var has_drag_started : bool = false
+@export var damage :int 
 
 @onready var self_start_position : Vector2 = global_position
 

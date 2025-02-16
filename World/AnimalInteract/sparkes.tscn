@@ -1,16 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://bruuxa7166cbx"]
+[gd_scene load_steps=7 format=3 uid="uid://bruuxa7166cbx"]
 
 [ext_resource type="Script" uid="uid://rf2cvpa0hals" path="res://World/AnimalInteract/sparkes.gd" id="1_1f18f"]
-[ext_resource type="Texture2D" uid="uid://bd4baj72jb54t" path="res://Assets/icon.svg" id="2_blsnk"]
+[ext_resource type="Texture2D" uid="uid://cxcsriqu7tmda" path="res://Assets/Environment/gatered.png" id="2_ofwlg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_blsnk"]
 size = Vector2(60, 10)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_8mq5r"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_vq5gh"]
+atlas = ExtResource("2_ofwlg")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xyfvq"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_blsnk")
+"texture": SubResource("AtlasTexture_vq5gh")
 }],
 "loop": true,
 "name": &"default",
@@ -29,8 +33,9 @@ script = ExtResource("1_1f18f")
 shape = SubResource("RectangleShape2D_blsnk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.6, 0.1)
-sprite_frames = SubResource("SpriteFrames_8mq5r")
+position = Vector2(1, 13)
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_xyfvq")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
