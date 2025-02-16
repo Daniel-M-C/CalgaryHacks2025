@@ -181,6 +181,7 @@ flow_puzzle = NodePath("../CanvasLayer/PipePuzzle")
 layer = -2
 
 [node name="PipePuzzle" parent="WaterLevel/CanvasLayer" instance=ExtResource("5_8rdcw")]
+visible = false
 anchor_left = 0.093
 anchor_top = 0.069
 anchor_right = 0.542
