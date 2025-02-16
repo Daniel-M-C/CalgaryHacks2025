@@ -24,7 +24,7 @@ theme_override_constants/v_separation = -8
 columns = 7
 script = ExtResource("1_5vxyr")
 start_pipe = NodePath("PipeSection1")
-end_pipe = NodePath("PipeSection30")
+end_pipe = NodePath("PipeSection28")
 
 [node name="PipeSection1" parent="." instance=ExtResource("1_g2en0")]
 custom_minimum_size = Vector2(0, 78)
@@ -271,6 +271,13 @@ true_used_prots = Array[bool]([true, true, false, true])
 pipe_type = 3
 
 [node name="PipeSection28" parent="." instance=ExtResource("1_g2en0")]
+custom_minimum_size = Vector2(0, 78)
+layout_mode = 2
+icon = ExtResource("6_igqeh")
+default_used_ports = Array[bool]([true, false, false, false])
+true_used_prots = Array[bool]([true, false, false, false])
+
+[node name="PipeSection50" parent="." instance=ExtResource("1_g2en0")]
 visible = false
 custom_minimum_size = Vector2(0, 498.816)
 layout_mode = 2
@@ -279,7 +286,7 @@ default_used_ports = Array[bool]([true, false, true, false])
 true_used_prots = Array[bool]([true, false, true, false])
 pipe_type = 2
 
-[node name="PipeSection29" parent="." instance=ExtResource("1_g2en0")]
+[node name="PipeSection51" parent="." instance=ExtResource("1_g2en0")]
 visible = false
 custom_minimum_size = Vector2(0, 498.816)
 layout_mode = 2
@@ -288,12 +295,5 @@ color = 2
 default_used_ports = Array[bool]([true, true, false, false])
 true_used_prots = Array[bool]([true, true, false, false])
 pipe_type = 1
-
-[node name="PipeSection30" parent="." instance=ExtResource("1_g2en0")]
-custom_minimum_size = Vector2(0, 78)
-layout_mode = 2
-icon = ExtResource("6_igqeh")
-default_used_ports = Array[bool]([true, false, false, false])
-true_used_prots = Array[bool]([true, false, false, false])
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

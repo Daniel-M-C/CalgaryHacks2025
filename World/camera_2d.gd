@@ -4,7 +4,7 @@ extends Camera2D
 This node is also a game manager I decided.
 """
 
-const level_position_offset : float = 1152
+const level_position_offset : float = 1052
 const move_speed : float = 500
 const move_speed_lerp : float = 1
 
