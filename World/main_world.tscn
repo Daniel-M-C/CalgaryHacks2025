@@ -218,12 +218,12 @@ sources/0 = SubResource("TileSetAtlasSource_syrwj")
 offset = Vector2(576, 324)
 script = ExtResource("1_cyt26")
 puzzle_node = NodePath("../WaterLevel/CanvasLayer/PipePuzzle")
-checkpoint_positions = Array[Vector2]([Vector2(70, 440), Vector2(1240, 354)])
+checkpoint_positions = Array[Vector2]([Vector2(70, 440), Vector2(1240, 354), Vector2(2170, 360)])
 player = NodePath("../PlayerOne")
 water = NodePath("../WaterLevel/water")
 
 [node name="Marker2D" type="Marker2D" parent="Camera2D"]
-position = Vector2(1239, 370)
+position = Vector2(2170, 360)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
