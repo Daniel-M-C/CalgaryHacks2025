@@ -9,6 +9,7 @@
 
 [node name="DraggablePlatform" parent="." instance=ExtResource("1_16qqv")]
 position = Vector2(345, 212)
+
 lock_x = true
 
 [node name="PlayerOne" parent="." instance=ExtResource("2_rocas")]
@@ -21,11 +22,3 @@ lock_y = true
 
 [node name="Cable" parent="." instance=ExtResource("3_r6447")]
 position = Vector2(484, 232)
-
-[node name="Cable2" parent="." instance=ExtResource("3_r6447")]
-position = Vector2(264, 461)
-rotation = -2.72455
-
-[node name="Plug" parent="." instance=ExtResource("4_r6447")]
-position = Vector2(435, 429)
-rotation = -0.111598
