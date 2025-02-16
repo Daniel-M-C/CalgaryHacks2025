@@ -20,24 +20,27 @@ grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 12
 theme_override_constants/h_separation = -8
+theme_override_constants/v_separation = -8
 columns = 7
 script = ExtResource("1_5vxyr")
-start_pipe = NodePath("PipeSection0")
+start_pipe = NodePath("PipeSection1")
 end_pipe = NodePath("PipeSection30")
 
-[node name="PipeSection0" parent="." instance=ExtResource("1_g2en0")]
-custom_minimum_size = Vector2(0, 498.816)
+[node name="PipeSection1" parent="." instance=ExtResource("1_g2en0")]
+custom_minimum_size = Vector2(0, 78)
 layout_mode = 2
 icon = ExtResource("6_igqeh")
 default_used_ports = Array[bool]([true, false, false, false])
+true_used_prots = Array[bool]([true, false, false, false])
 
 [node name="PipeSection2" parent="." instance=ExtResource("1_g2en0")]
 custom_minimum_size = Vector2(0, 498.816)
 layout_mode = 2
 icon = ExtResource("2_3h88w")
-default_used_ports = Array[bool]([false, true, true, true])
+default_used_ports = Array[bool]([true, false, true, true])
+true_used_prots = Array[bool]([true, false, true, true])
 pipe_type = 3
-starting_rotation = 2
+starting_rotation = 3
 
 [node name="PipeSection3" parent="." instance=ExtResource("1_g2en0")]
 custom_minimum_size = Vector2(0, 498.816)
@@ -45,6 +48,7 @@ layout_mode = 2
 icon = ExtResource("4_5vxyr")
 color = 1
 default_used_ports = Array[bool]([true, false, true, false])
+true_used_prots = Array[bool]([true, false, true, false])
 pipe_type = 2
 
 [node name="PipeSection4" parent="." instance=ExtResource("1_g2en0")]
@@ -52,7 +56,8 @@ custom_minimum_size = Vector2(0, 498.816)
 layout_mode = 2
 icon = ExtResource("2_0jhvd")
 color = 1
-default_used_ports = Array[bool]([true, false, false, true])
+default_used_ports = Array[bool]([false, true, true, false])
+true_used_prots = Array[bool]([false, true, true, false])
 pipe_type = 1
 starting_rotation = 1
 
@@ -61,8 +66,9 @@ custom_minimum_size = Vector2(0, 498.816)
 layout_mode = 2
 icon = ExtResource("2_3h88w")
 default_used_ports = Array[bool]([true, true, true, false])
+true_used_prots = Array[bool]([true, true, true, false])
 pipe_type = 3
-starting_rotation = 3
+starting_rotation = 1
 
 [node name="PipeSection6" parent="." instance=ExtResource("1_g2en0")]
 custom_minimum_size = Vector2(0, 498.816)
@@ -70,6 +76,7 @@ layout_mode = 2
 icon = ExtResource("2_0jhvd")
 color = 1
 default_used_ports = Array[bool]([false, false, true, true])
+true_used_prots = Array[bool]([false, false, true, true])
 pipe_type = 1
 starting_rotation = 2
 
@@ -79,6 +86,7 @@ layout_mode = 2
 icon = ExtResource("4_5vxyr")
 color = 2
 default_used_ports = Array[bool]([true, false, true, false])
+true_used_prots = Array[bool]([true, false, true, false])
 pipe_type = 2
 
 [node name="PipeSection8" parent="." instance=ExtResource("1_g2en0")]
@@ -87,6 +95,7 @@ layout_mode = 2
 icon = ExtResource("2_3h88w")
 color = 1
 default_used_ports = Array[bool]([false, true, true, true])
+true_used_prots = Array[bool]([false, true, true, true])
 pipe_type = 3
 starting_rotation = 2
 
@@ -96,6 +105,7 @@ layout_mode = 2
 icon = ExtResource("2_3h88w")
 color = 2
 default_used_ports = Array[bool]([true, true, false, true])
+true_used_prots = Array[bool]([true, true, false, true])
 pipe_type = 3
 
 [node name="PipeSection10" parent="." instance=ExtResource("1_g2en0")]
@@ -104,6 +114,7 @@ layout_mode = 2
 icon = ExtResource("4_5vxyr")
 color = 1
 default_used_ports = Array[bool]([false, true, false, true])
+true_used_prots = Array[bool]([false, true, false, true])
 pipe_type = 2
 starting_rotation = 1
 
@@ -112,6 +123,7 @@ custom_minimum_size = Vector2(0, 498.816)
 layout_mode = 2
 icon = ExtResource("2_0jhvd")
 default_used_ports = Array[bool]([true, true, false, false])
+true_used_prots = Array[bool]([true, true, false, false])
 pipe_type = 1
 
 [node name="PipeSection12" parent="." instance=ExtResource("1_g2en0")]
@@ -119,6 +131,7 @@ custom_minimum_size = Vector2(0, 498.816)
 layout_mode = 2
 icon = ExtResource("4_5vxyr")
 default_used_ports = Array[bool]([true, false, true, false])
+true_used_prots = Array[bool]([true, false, true, false])
 pipe_type = 2
 
 [node name="PipeSection13" parent="." instance=ExtResource("1_g2en0")]
@@ -127,6 +140,7 @@ layout_mode = 2
 icon = ExtResource("2_3h88w")
 color = 2
 default_used_ports = Array[bool]([false, true, true, true])
+true_used_prots = Array[bool]([false, true, true, true])
 pipe_type = 3
 starting_rotation = 2
 
@@ -135,6 +149,7 @@ custom_minimum_size = Vector2(0, 498.816)
 layout_mode = 2
 icon = ExtResource("2_0jhvd")
 default_used_ports = Array[bool]([false, false, true, true])
+true_used_prots = Array[bool]([false, false, true, true])
 pipe_type = 1
 starting_rotation = 2
 
@@ -144,13 +159,15 @@ layout_mode = 2
 icon = ExtResource("4_5vxyr")
 color = 1
 default_used_ports = Array[bool]([true, false, true, false])
+true_used_prots = Array[bool]([true, false, true, false])
 pipe_type = 2
 
 [node name="PipeSection16" parent="." instance=ExtResource("1_g2en0")]
 custom_minimum_size = Vector2(0, 498.816)
 layout_mode = 2
 icon = ExtResource("2_3h88w")
-default_used_ports = Array[bool]([true, false, true, true])
+default_used_ports = Array[bool]([true, true, true, false])
+true_used_prots = Array[bool]([true, true, true, false])
 pipe_type = 3
 starting_rotation = 1
 
@@ -160,6 +177,7 @@ layout_mode = 2
 icon = ExtResource("4_5vxyr")
 color = 2
 default_used_ports = Array[bool]([false, true, false, true])
+true_used_prots = Array[bool]([false, true, false, true])
 pipe_type = 2
 starting_rotation = 1
 
@@ -169,6 +187,7 @@ layout_mode = 2
 icon = ExtResource("2_0jhvd")
 color = 2
 default_used_ports = Array[bool]([true, true, false, false])
+true_used_prots = Array[bool]([true, true, false, false])
 pipe_type = 1
 
 [node name="PipeSection19" parent="." instance=ExtResource("1_g2en0")]
@@ -176,6 +195,7 @@ custom_minimum_size = Vector2(0, 498.816)
 layout_mode = 2
 icon = ExtResource("2_3h88w")
 default_used_ports = Array[bool]([true, true, false, true])
+true_used_prots = Array[bool]([true, true, false, true])
 pipe_type = 3
 
 [node name="PipeSection20" parent="." instance=ExtResource("1_g2en0")]
@@ -184,6 +204,7 @@ layout_mode = 2
 icon = ExtResource("4_5vxyr")
 color = 1
 default_used_ports = Array[bool]([false, true, false, true])
+true_used_prots = Array[bool]([false, true, false, true])
 pipe_type = 2
 starting_rotation = 1
 
@@ -192,7 +213,8 @@ custom_minimum_size = Vector2(0, 498.816)
 layout_mode = 2
 icon = ExtResource("2_3h88w")
 color = 2
-default_used_ports = Array[bool]([true, true, true, false])
+default_used_ports = Array[bool]([true, false, true, true])
+true_used_prots = Array[bool]([true, false, true, true])
 pipe_type = 3
 starting_rotation = 3
 
@@ -201,6 +223,7 @@ custom_minimum_size = Vector2(0, 498.816)
 layout_mode = 2
 icon = ExtResource("2_0jhvd")
 default_used_ports = Array[bool]([true, true, false, false])
+true_used_prots = Array[bool]([true, true, false, false])
 pipe_type = 1
 
 [node name="PipeSection23" parent="." instance=ExtResource("1_g2en0")]
@@ -209,6 +232,7 @@ layout_mode = 2
 icon = ExtResource("2_0jhvd")
 color = 1
 default_used_ports = Array[bool]([true, true, false, false])
+true_used_prots = Array[bool]([true, true, false, false])
 pipe_type = 1
 
 [node name="PipeSection24" parent="." instance=ExtResource("1_g2en0")]
@@ -216,6 +240,7 @@ custom_minimum_size = Vector2(0, 498.816)
 layout_mode = 2
 icon = ExtResource("2_3h88w")
 default_used_ports = Array[bool]([true, true, false, true])
+true_used_prots = Array[bool]([true, true, false, true])
 pipe_type = 3
 
 [node name="PipeSection25" parent="." instance=ExtResource("1_g2en0")]
@@ -223,7 +248,8 @@ custom_minimum_size = Vector2(0, 498.816)
 layout_mode = 2
 icon = ExtResource("2_0jhvd")
 color = 1
-default_used_ports = Array[bool]([true, false, false, true])
+default_used_ports = Array[bool]([false, true, true, false])
+true_used_prots = Array[bool]([false, true, true, false])
 pipe_type = 1
 starting_rotation = 1
 
@@ -232,6 +258,7 @@ custom_minimum_size = Vector2(0, 498.816)
 layout_mode = 2
 icon = ExtResource("4_5vxyr")
 default_used_ports = Array[bool]([true, false, true, false])
+true_used_prots = Array[bool]([true, false, true, false])
 pipe_type = 2
 
 [node name="PipeSection27" parent="." instance=ExtResource("1_g2en0")]
@@ -240,6 +267,7 @@ layout_mode = 2
 icon = ExtResource("2_3h88w")
 color = 1
 default_used_ports = Array[bool]([true, true, false, true])
+true_used_prots = Array[bool]([true, true, false, true])
 pipe_type = 3
 
 [node name="PipeSection28" parent="." instance=ExtResource("1_g2en0")]
@@ -248,6 +276,7 @@ custom_minimum_size = Vector2(0, 498.816)
 layout_mode = 2
 icon = ExtResource("4_5vxyr")
 default_used_ports = Array[bool]([true, false, true, false])
+true_used_prots = Array[bool]([true, false, true, false])
 pipe_type = 2
 
 [node name="PipeSection29" parent="." instance=ExtResource("1_g2en0")]
@@ -257,6 +286,7 @@ layout_mode = 2
 icon = ExtResource("2_0jhvd")
 color = 2
 default_used_ports = Array[bool]([true, true, false, false])
+true_used_prots = Array[bool]([true, true, false, false])
 pipe_type = 1
 
 [node name="PipeSection30" parent="." instance=ExtResource("1_g2en0")]
@@ -264,3 +294,6 @@ custom_minimum_size = Vector2(0, 498.816)
 layout_mode = 2
 icon = ExtResource("6_igqeh")
 default_used_ports = Array[bool]([true, false, false, false])
+true_used_prots = Array[bool]([true, false, false, false])
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

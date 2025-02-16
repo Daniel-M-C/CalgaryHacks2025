@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dwryfod28727j"]
 
 [ext_resource type="Script" uid="uid://dk2x67qmiuq77" path="res://World/InteractibleObjects/draggable_platform.gd" id="1_4ouxb"]
-[ext_resource type="Texture2D" uid="uid://dlwliemni7kvj" path="res://Assets/Environment/server_A.png" id="2_kxc0q"]
+[ext_resource type="Texture2D" uid="uid://cgtaekh2clda" path="res://Assets/Environment/server_A.png" id="2_kxc0q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3bkjc"]
 size = Vector2(102, 165)

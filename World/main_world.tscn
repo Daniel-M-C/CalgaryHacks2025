@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dwryfod28727j" path="res://World/InteractibleObjects/draggable_platform.tscn" id="1_16qqv"]
 [ext_resource type="Script" uid="uid://b5n1cdon6r4qt" path="res://World/camera_2d.gd" id="1_cyt26"]
-[ext_resource type="Texture2D" uid="uid://bmwblvaetb8ae" path="res://Assets/Environment/server_bg.png" id="2_qhfov"]
+[ext_resource type="Texture2D" uid="uid://vx0hdfnpkpc2" path="res://Assets/Environment/server_bg.png" id="2_qhfov"]
 [ext_resource type="PackedScene" uid="uid://ctkpfei25vhd4" path="res://Animal/player_one.tscn" id="2_rocas"]
 [ext_resource type="Texture2D" uid="uid://brdp78tbkcx81" path="res://Assets/Environment/tilemap_nature.png" id="3_hs2qd"]
 [ext_resource type="PackedScene" uid="uid://bhsrdhvqho0uw" path="res://World/AnimalInteract/cable.tscn" id="3_r6447"]
@@ -214,12 +214,16 @@ sources/0 = SubResource("TileSetAtlasSource_syrwj")
 
 [node name="MainWorld" type="Node2D"]
 
-[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player", "water")]
-position = Vector2(-376, -16)
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("puzzle_node", "player", "water")]
 offset = Vector2(576, 324)
 script = ExtResource("1_cyt26")
+puzzle_node = NodePath("../WaterLevel/CanvasLayer/PipePuzzle")
+checkpoint_positions = Array[Vector2]([Vector2(70, 440), Vector2(1240, 354)])
 player = NodePath("../PlayerOne")
 water = NodePath("../WaterLevel/water")
+
+[node name="Marker2D" type="Marker2D" parent="Camera2D"]
+position = Vector2(1239, 370)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -368,6 +372,7 @@ flow_puzzle = NodePath("../CanvasLayer/PipePuzzle")
 layer = -2
 
 [node name="PipePuzzle" parent="WaterLevel/CanvasLayer" instance=ExtResource("5_8rdcw")]
+
 offset_left = 1454.19
 offset_top = -13.672
 offset_right = 1393.38
@@ -389,8 +394,11 @@ gizmo_extents = 456.6
 
 [node name="Start2" parent="JumpingLevel" instance=ExtResource("1_16qqv")]
 position = Vector2(-356, 523)
-scale = Vector2(10, 0.3)
-damage = 0
+scale = Vector2(7.85, 0.3)
+
+[node name="Start3" parent="JumpingLevel" instance=ExtResource("1_16qqv")]
+position = Vector2(-474, 577)
+scale = Vector2(11.67, 0.18)
 
 [node name="Floor" parent="JumpingLevel" instance=ExtResource("1_16qqv")]
 position = Vector2(1274, 1254)
