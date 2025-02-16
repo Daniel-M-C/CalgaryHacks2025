@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+class_name Player
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
@@ -42,13 +42,13 @@ func _physics_process(delta):
 	move_and_slide()
 
 
-func _on_hurt_box_body_entered(body):
-	if (body.damage):
-		hp -= body.damge
+
+func _on_hurt_box_area_entered(area: Area2D) -> void:
+	if area.get("damage"):
+		hp -= area.damage
 	else:
 		hp -= 10
-		
-	pass 
+	
 func _input(event):
 	
 	if event.is_action_pressed("action"):

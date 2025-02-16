@@ -58,7 +58,7 @@ animations = [{
 
 [node name="PlayerOne" type="CharacterBody2D"]
 z_index = 3
-collision_layer = 0
+collision_layer = 65536
 script = ExtResource("1_oi0yx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -239,4 +239,5 @@ position = Vector2(1.90735e-06, -0.999998)
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_0h8gg")
 
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="body_entered" from="HurtBox" to="." method="_on_hurt_box_body_entered"]
