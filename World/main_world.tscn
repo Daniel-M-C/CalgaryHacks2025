@@ -11,7 +11,7 @@ position = Vector2(345, 212)
 lock_x = true
 
 [node name="PlayerOne" parent="." instance=ExtResource("2_rocas")]
-position = Vector2(391, 425)
+position = Vector2(393, 369)
 
 [node name="DraggablePlatform2" parent="." instance=ExtResource("1_16qqv")]
 position = Vector2(402, 508)

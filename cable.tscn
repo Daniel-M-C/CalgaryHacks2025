@@ -1,24 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://bhsrdhvqho0uw"]
+[gd_scene load_steps=5 format=3 uid="uid://bhsrdhvqho0uw"]
 
-[ext_resource type="Script" uid="uid://bmf7uyi2mx36f" path="res://cable.gd" id="1_3ytm0"]
 [ext_resource type="Texture2D" uid="uid://bd4baj72jb54t" path="res://icon.svg" id="1_omul7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ytm0"]
-size = Vector2(116, 118)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jqrxp"]
-radius = 28.0
-height = 100.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lxnu8"]
-size = Vector2(113, 114)
 
 [node name="Cable" type="Node2D"]
-scale = Vector2(0.25, 0.25)
-script = ExtResource("1_3ytm0")
 
 [node name="CableBlock" type="StaticBody2D" parent="."]
 position = Vector2(0, -2)
+scale = Vector2(0.25, 0.25)
+collision_layer = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="CableBlock"]
 texture = ExtResource("1_omul7")
@@ -28,45 +23,49 @@ position = Vector2(1, -1)
 shape = SubResource("RectangleShape2D_3ytm0")
 
 [node name="PinJoint2D" type="PinJoint2D" parent="."]
-position = Vector2(1, 62)
+position = Vector2(0, 16)
 node_a = NodePath("../CableBlock")
 node_b = NodePath("../CableBody")
-softness = 3.0
 
 [node name="CableBody" type="RigidBody2D" parent="."]
-position = Vector2(1, 129)
+position = Vector2(1, 30)
+collision_layer = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="CableBody"]
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_omul7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CableBody"]
+position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_jqrxp")
 
 [node name="PinJoint2D2" type="PinJoint2D" parent="."]
-position = Vector2(1, 196)
+position = Vector2(0, 49)
 node_a = NodePath("../CableBody")
 node_b = NodePath("../CableBody2")
-softness = 3.0
 
 [node name="CableBody2" type="RigidBody2D" parent="."]
-position = Vector2(1, 260)
+position = Vector2(0, 64)
+collision_layer = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="CableBody2"]
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_omul7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CableBody2"]
 shape = SubResource("CapsuleShape2D_jqrxp")
 
 [node name="PinJoint2D3" type="PinJoint2D" parent="."]
-position = Vector2(0, 326)
+position = Vector2(0, 83)
 node_a = NodePath("../CableBody2")
 node_b = NodePath("../CableBody3")
-softness = 3.0
 
 [node name="CableBody3" type="RigidBody2D" parent="."]
-position = Vector2(1, 396)
+position = Vector2(0, 97)
+collision_layer = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="CableBody3"]
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_omul7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CableBody3"]
@@ -74,45 +73,49 @@ position = Vector2(0, 3)
 shape = SubResource("CapsuleShape2D_jqrxp")
 
 [node name="PinJoint2D4" type="PinJoint2D" parent="."]
-position = Vector2(1, 470)
+position = Vector2(0, 117)
 node_a = NodePath("../CableBody3")
 node_b = NodePath("../CableBody4")
-softness = 3.0
 
 [node name="CableBody4" type="RigidBody2D" parent="."]
-position = Vector2(2, 540)
+position = Vector2(-2, 135)
+collision_layer = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="CableBody4"]
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_omul7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CableBody4"]
 shape = SubResource("CapsuleShape2D_jqrxp")
 
 [node name="PinJoint2D5" type="PinJoint2D" parent="."]
-position = Vector2(2, 611)
+position = Vector2(-2, 152)
 node_a = NodePath("../CableBody4")
 node_b = NodePath("../CableBody5")
-softness = 3.0
 
 [node name="CableBody5" type="RigidBody2D" parent="."]
-position = Vector2(2, 684)
+position = Vector2(-1, 169)
+collision_layer = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="CableBody5"]
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_omul7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CableBody5"]
 shape = SubResource("CapsuleShape2D_jqrxp")
 
 [node name="PinJoint2D6" type="PinJoint2D" parent="."]
-position = Vector2(2, 757)
+position = Vector2(-1, 185)
 node_a = NodePath("../CableBody5")
 node_b = NodePath("../CableEnd")
-softness = 3.0
 
 [node name="CableEnd" type="RigidBody2D" parent="."]
-position = Vector2(5, 827)
+position = Vector2(-3, 205)
+collision_layer = 4
+collision_mask = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="CableEnd"]
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_omul7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CableEnd"]

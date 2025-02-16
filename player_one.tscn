@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ctkpfei25vhd4"]
+[gd_scene load_steps=14 format=3 uid="uid://ctkpfei25vhd4"]
 
 [ext_resource type="Script" uid="uid://dr5a27ra4y5ll" path="res://player_one.gd" id="1_oi0yx"]
 [ext_resource type="Texture2D" uid="uid://bd4baj72jb54t" path="res://icon.svg" id="2_chexb"]
@@ -47,12 +47,21 @@ color = Color(0.82881, 2.71939e-06, 5.77569e-07, 1)
 color_ramp = SubResource("GradientTexture1D_0h8gg")
 alpha_curve = SubResource("CurveTexture_chexb")
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_chexb"]
+radius = 1.0
+height = 2.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_chexb"]
+radius = 37.054
+
 [node name="PlayerOne" type="CharacterBody2D"]
+z_index = 3
 script = ExtResource("1_oi0yx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 3
 position = Vector2(1.90735e-06, -0.999998)
-scale = Vector2(0.242188, 0.242188)
+scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_0h8gg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -70,5 +79,128 @@ position = Vector2(0, -2)
 emitting = false
 amount = 24
 process_material = SubResource("ParticleProcessMaterial_oe7yg")
+
+[node name="Tail" type="Node2D" parent="."]
+z_index = 2
+position = Vector2(3, 0)
+rotation = -1.5708
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Tail"]
+position = Vector2(6, -3)
+node_a = NodePath("../..")
+node_b = NodePath("../TailBody")
+
+[node name="TailBody" type="RigidBody2D" parent="Tail"]
+position = Vector2(0, -3)
+collision_layer = 0
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Tail/TailBody"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_chexb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tail/TailBody"]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_chexb")
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="Tail"]
+position = Vector2(-4, -3)
+node_a = NodePath("../TailBody")
+node_b = NodePath("../TailBody2")
+
+[node name="TailBody2" type="RigidBody2D" parent="Tail"]
+position = Vector2(-9, -3)
+collision_layer = 0
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Tail/TailBody2"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_chexb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tail/TailBody2"]
+shape = SubResource("CapsuleShape2D_chexb")
+
+[node name="PinJoint2D3" type="PinJoint2D" parent="Tail"]
+position = Vector2(-14, -3)
+node_a = NodePath("../TailBody2")
+node_b = NodePath("../TailBody3")
+
+[node name="TailBody3" type="RigidBody2D" parent="Tail"]
+position = Vector2(-19, -3)
+collision_layer = 0
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Tail/TailBody3"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_chexb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tail/TailBody3"]
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_chexb")
+
+[node name="PinJoint2D4" type="PinJoint2D" parent="Tail"]
+position = Vector2(-23, -3)
+node_a = NodePath("../TailBody3")
+node_b = NodePath("../TailBody4")
+
+[node name="TailBody4" type="RigidBody2D" parent="Tail"]
+position = Vector2(-27, -3)
+collision_layer = 0
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Tail/TailBody4"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_chexb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tail/TailBody4"]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_chexb")
+
+[node name="PinJoint2D5" type="PinJoint2D" parent="Tail"]
+position = Vector2(-31, -3)
+node_a = NodePath("../TailBody4")
+node_b = NodePath("../TailBody5")
+
+[node name="TailBody5" type="RigidBody2D" parent="Tail"]
+position = Vector2(-36, -3)
+collision_layer = 0
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Tail/TailBody5"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_chexb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tail/TailBody5"]
+shape = SubResource("CapsuleShape2D_chexb")
+
+[node name="PinJoint2D6" type="PinJoint2D" parent="Tail"]
+position = Vector2(-40, -3)
+node_a = NodePath("../TailBody5")
+node_b = NodePath("../TailBody6")
+
+[node name="TailBody6" type="RigidBody2D" parent="Tail"]
+position = Vector2(-45, -3)
+collision_layer = 0
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Tail/TailBody6"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_chexb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tail/TailBody6"]
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_chexb")
+
+[node name="CarryArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CarryArea"]
+position = Vector2(0, -5)
+shape = SubResource("CircleShape2D_chexb")
+
+[node name="GrabPoint" type="PinJoint2D" parent="."]
+node_a = NodePath("..")
+softness = 5.0
 
 [connection signal="body_entered" from="HurtBox" to="." method="_on_hurt_box_body_entered"]
