@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://i5nl44n31aam"]
 
 [ext_resource type="PackedScene" uid="uid://dwryfod28727j" path="res://World/InteractibleObjects/draggable_platform.tscn" id="1_16qqv"]
-[ext_resource type="Script" uid="uid://b5n1cdon6r4qt" path="res://World/camera_2d.gd" id="1_cyt26"]
+[ext_resource type="Script" path="res://World/camera_2d.gd" id="1_cyt26"]
 [ext_resource type="PackedScene" uid="uid://ctkpfei25vhd4" path="res://Animal/player_one.tscn" id="2_rocas"]
 [ext_resource type="PackedScene" uid="uid://bhsrdhvqho0uw" path="res://World/AnimalInteract/cable.tscn" id="3_r6447"]
 [ext_resource type="PackedScene" uid="uid://cvl2y5enk7w5q" path="res://World/AnimalInteract/plug.tscn" id="5_8h63e"]
@@ -19,6 +19,8 @@ script = ExtResource("1_cyt26")
 
 [node name="PlayerOne" parent="." instance=ExtResource("2_rocas")]
 position = Vector2(71, 439)
+collision_layer = 65552
+collision_mask = 17
 
 [node name="JumpingLevel" type="Node2D" parent="."]
 
@@ -88,7 +90,7 @@ min_x = -1e+08
 [node name="Cable" parent="WaterLevel" instance=ExtResource("3_r6447")]
 position = Vector2(484, 232)
 
-[node name="Plug" parent="WaterLevel" node_paths=PackedStringArray("start_cable", "flow_puzzle") instance=ExtResource("5_8h63e")]
+[node name="Plug" parent="WaterLevel" node_paths=PackedStringArray("flow_puzzle") instance=ExtResource("5_8h63e")]
 position = Vector2(624, 403)
 flow_puzzle = NodePath("../CanvasLayer/PipePuzzle")
 
