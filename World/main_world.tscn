@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dwryfod28727j" path="res://World/InteractibleObjects/draggable_platform.tscn" id="1_16qqv"]
 [ext_resource type="PackedScene" uid="uid://ctkpfei25vhd4" path="res://player_one.tscn" id="2_rocas"]
-[ext_resource type="PackedScene" path="res://cable.tscn" id="3_r6447"]
+[ext_resource type="PackedScene" uid="uid://bhsrdhvqho0uw" path="res://cable.tscn" id="3_r6447"]
 
 [node name="MainWorld" type="Node2D"]
 

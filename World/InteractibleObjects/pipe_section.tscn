@@ -47,6 +47,7 @@ anchor_bottom = 0.8
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_lxmeo")
+expand_mode = 1
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
 [connection signal="resized" from="." to="." method="_on_resized"]

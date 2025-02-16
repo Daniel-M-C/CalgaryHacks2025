@@ -7,11 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://pbf6b5olci6q" path="res://Assets/Environment/pipe_two_straight.png" id="4_5vxyr"]
 
 [node name="PipePuzzle" type="GridContainer" node_paths=PackedStringArray("start_pipe")]
-modulate = Color(1, 1, 1, 0.666667)
 anchors_preset = -1
-anchor_left = 0.544
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_left = 0.189
+anchor_top = 0.295
+anchor_right = 0.579
+anchor_bottom = 0.662
 offset_left = -2.43201
 offset_right = -2.43201
 grow_horizontal = 0
@@ -22,14 +22,14 @@ script = ExtResource("1_5vxyr")
 start_pipe = NodePath("PipeSection0")
 
 [node name="PipeSection0" parent="." instance=ExtResource("1_g2en0")]
-custom_minimum_size = Vector2(0, 85)
+custom_minimum_size = Vector2(0, 72)
 layout_mode = 2
 icon = ExtResource("2_0jhvd")
 default_used_ports = Array[bool]([true, true, false, false])
 pipe_type = 1
 
 [node name="PipeSection2" parent="." instance=ExtResource("1_g2en0")]
-custom_minimum_size = Vector2(0, 84)
+custom_minimum_size = Vector2(0, 72)
 layout_mode = 2
 icon = ExtResource("2_3h88w")
 default_used_ports = Array[bool]([false, true, true, true])
@@ -37,7 +37,7 @@ pipe_type = 3
 starting_rotation = 2
 
 [node name="PipeSection3" parent="." instance=ExtResource("1_g2en0")]
-custom_minimum_size = Vector2(0, 84)
+custom_minimum_size = Vector2(0, 72)
 layout_mode = 2
 icon = ExtResource("4_5vxyr")
 color = 1
@@ -45,7 +45,7 @@ default_used_ports = Array[bool]([true, false, true, false])
 pipe_type = 2
 
 [node name="PipeSection4" parent="." instance=ExtResource("1_g2en0")]
-custom_minimum_size = Vector2(0, 84)
+custom_minimum_size = Vector2(0, 71)
 layout_mode = 2
 icon = ExtResource("2_0jhvd")
 color = 2
@@ -54,105 +54,105 @@ pipe_type = 1
 starting_rotation = 1
 
 [node name="PipeSection5" parent="." instance=ExtResource("1_g2en0")]
-custom_minimum_size = Vector2(0, 84)
+custom_minimum_size = Vector2(0, 71)
 layout_mode = 2
 
 [node name="PipeSection6" parent="." instance=ExtResource("1_g2en0")]
-custom_minimum_size = Vector2(0, 84)
+custom_minimum_size = Vector2(0, 71)
 layout_mode = 2
 
 [node name="PipeSection7" parent="." instance=ExtResource("1_g2en0")]
-custom_minimum_size = Vector2(0, 85)
+custom_minimum_size = Vector2(0, 72)
 layout_mode = 2
 
 [node name="PipeSection8" parent="." instance=ExtResource("1_g2en0")]
-custom_minimum_size = Vector2(0, 84)
+custom_minimum_size = Vector2(0, 72)
 layout_mode = 2
 
 [node name="PipeSection9" parent="." instance=ExtResource("1_g2en0")]
-custom_minimum_size = Vector2(0, 84)
+custom_minimum_size = Vector2(0, 72)
 layout_mode = 2
 
 [node name="PipeSection10" parent="." instance=ExtResource("1_g2en0")]
-custom_minimum_size = Vector2(0, 84)
+custom_minimum_size = Vector2(0, 71)
 layout_mode = 2
 
 [node name="PipeSection11" parent="." instance=ExtResource("1_g2en0")]
-custom_minimum_size = Vector2(0, 84)
+custom_minimum_size = Vector2(0, 71)
 layout_mode = 2
 
 [node name="PipeSection12" parent="." instance=ExtResource("1_g2en0")]
-custom_minimum_size = Vector2(0, 84)
+custom_minimum_size = Vector2(0, 71)
 layout_mode = 2
 
 [node name="PipeSection13" parent="." instance=ExtResource("1_g2en0")]
-custom_minimum_size = Vector2(0, 85)
+custom_minimum_size = Vector2(0, 72)
 layout_mode = 2
 
 [node name="PipeSection14" parent="." instance=ExtResource("1_g2en0")]
-custom_minimum_size = Vector2(0, 84)
+custom_minimum_size = Vector2(0, 72)
 layout_mode = 2
 
 [node name="PipeSection15" parent="." instance=ExtResource("1_g2en0")]
-custom_minimum_size = Vector2(0, 84)
+custom_minimum_size = Vector2(0, 72)
 layout_mode = 2
 
 [node name="PipeSection16" parent="." instance=ExtResource("1_g2en0")]
-custom_minimum_size = Vector2(0, 84)
+custom_minimum_size = Vector2(0, 71)
 layout_mode = 2
 
 [node name="PipeSection17" parent="." instance=ExtResource("1_g2en0")]
-custom_minimum_size = Vector2(0, 84)
+custom_minimum_size = Vector2(0, 71)
 layout_mode = 2
 
 [node name="PipeSection18" parent="." instance=ExtResource("1_g2en0")]
-custom_minimum_size = Vector2(0, 84)
+custom_minimum_size = Vector2(0, 71)
 layout_mode = 2
 
 [node name="PipeSection19" parent="." instance=ExtResource("1_g2en0")]
-custom_minimum_size = Vector2(0, 85)
+custom_minimum_size = Vector2(0, 72)
 layout_mode = 2
 
 [node name="PipeSection20" parent="." instance=ExtResource("1_g2en0")]
-custom_minimum_size = Vector2(0, 84)
+custom_minimum_size = Vector2(0, 72)
 layout_mode = 2
 
 [node name="PipeSection21" parent="." instance=ExtResource("1_g2en0")]
-custom_minimum_size = Vector2(0, 84)
+custom_minimum_size = Vector2(0, 72)
 layout_mode = 2
 
 [node name="PipeSection22" parent="." instance=ExtResource("1_g2en0")]
-custom_minimum_size = Vector2(0, 84)
+custom_minimum_size = Vector2(0, 71)
 layout_mode = 2
 
 [node name="PipeSection23" parent="." instance=ExtResource("1_g2en0")]
-custom_minimum_size = Vector2(0, 84)
+custom_minimum_size = Vector2(0, 71)
 layout_mode = 2
 
 [node name="PipeSection24" parent="." instance=ExtResource("1_g2en0")]
-custom_minimum_size = Vector2(0, 84)
+custom_minimum_size = Vector2(0, 71)
 layout_mode = 2
 
 [node name="PipeSection25" parent="." instance=ExtResource("1_g2en0")]
-custom_minimum_size = Vector2(0, 85)
+custom_minimum_size = Vector2(0, 72)
 layout_mode = 2
 
 [node name="PipeSection26" parent="." instance=ExtResource("1_g2en0")]
-custom_minimum_size = Vector2(0, 84)
+custom_minimum_size = Vector2(0, 72)
 layout_mode = 2
 
 [node name="PipeSection27" parent="." instance=ExtResource("1_g2en0")]
-custom_minimum_size = Vector2(0, 84)
+custom_minimum_size = Vector2(0, 72)
 layout_mode = 2
 
 [node name="PipeSection28" parent="." instance=ExtResource("1_g2en0")]
-custom_minimum_size = Vector2(0, 84)
+custom_minimum_size = Vector2(0, 71)
 layout_mode = 2
 
 [node name="PipeSection29" parent="." instance=ExtResource("1_g2en0")]
-custom_minimum_size = Vector2(0, 84)
+custom_minimum_size = Vector2(0, 71)
 layout_mode = 2
 
 [node name="PipeSection30" parent="." instance=ExtResource("1_g2en0")]
-custom_minimum_size = Vector2(0, 84)
+custom_minimum_size = Vector2(0, 71)
 layout_mode = 2
