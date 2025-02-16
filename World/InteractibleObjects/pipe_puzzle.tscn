@@ -30,7 +30,7 @@ end_pipe = NodePath("PipeSection28")
 custom_minimum_size = Vector2(0, 78)
 layout_mode = 2
 icon = ExtResource("6_igqeh")
-default_used_ports = Array[bool]([true, false, false, false])
+default_used_ports = Array[bool]([false, false, true, false])
 true_used_prots = Array[bool]([true, false, false, false])
 
 [node name="PipeSection2" parent="." instance=ExtResource("1_g2en0")]

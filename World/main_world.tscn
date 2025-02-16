@@ -244,7 +244,9 @@ sources/0 = SubResource("TileSetAtlasSource_syrwj")
 
 [node name="MainWorld" type="Node2D"]
 
-[node name="WinMenu" parent="." instance=ExtResource("15_pwl74")]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="WinMenu" parent="CanvasLayer" instance=ExtResource("15_pwl74")]
 visible = false
 z_index = 4096
 
@@ -252,7 +254,7 @@ z_index = 4096
 offset = Vector2(576, 324)
 script = ExtResource("1_cyt26")
 puzzle_node = NodePath("../WaterLevel/CanvasLayer/PipePuzzle")
-win_menu = NodePath("../WinMenu")
+win_menu = NodePath("../CanvasLayer/WinMenu")
 checkpoint_positions = Array[Vector2]([Vector2(70, 440), Vector2(1240, 354), Vector2(2170, 360)])
 player = NodePath("../PlayerOne")
 water = NodePath("../WaterLevel/water")

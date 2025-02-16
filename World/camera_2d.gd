@@ -9,7 +9,7 @@ const move_speed : float = 500
 const move_speed_lerp : float = 1
 
 var level_num : int = 0
-
+const WIN_MENU = preload("res://win_menu.tscn")
 @export var puzzle_node : Node 
 @export var win_menu : Control 
 
@@ -49,5 +49,6 @@ func reset_level():
 
 
 func _on_game_won(body: Node2D) -> void:
-	win_menu.visible = true
+	get_tree().change_scene_to_packed(WIN_MENU)
+	#win_menu.visible = true
 	pass # Replace with function body.
