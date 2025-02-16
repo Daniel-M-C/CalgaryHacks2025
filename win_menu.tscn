@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cpytixgxn2gc3"]
+[gd_scene load_steps=23 format=3 uid="uid://cpytixgxn2gc3"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_frsyg"]
 [ext_resource type="Texture2D" uid="uid://bn7ap3hbi6fl6" path="res://Assets/title screen animated/Untitled_Artwork-5.png" id="2_qvaom"]
@@ -53,6 +53,35 @@ colors = PackedColorArray(0.933333, 0, 0.843137, 1, 0.156977, 0.156977, 0.156977
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_qvaom"]
 gradient = SubResource("Gradient_frsyg")
+width = 12
+height = 16
+fill_to = Vector2(0, 0)
+
+[sub_resource type="Gradient" id="Gradient_qvaom"]
+colors = PackedColorArray(0.745098, 0.835294, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8lxq1"]
+gradient = SubResource("Gradient_qvaom")
+width = 12
+height = 16
+fill_to = Vector2(0, 0)
+
+[sub_resource type="Gradient" id="Gradient_8lxq1"]
+colors = PackedColorArray(0.121569, 0.270588, 0.772549, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_g7srb"]
+gradient = SubResource("Gradient_8lxq1")
+width = 12
+height = 16
+fill_to = Vector2(0, 0)
+
+[sub_resource type="Gradient" id="Gradient_g7srb"]
+colors = PackedColorArray(0.364706, 0.85098, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7pd2s"]
+gradient = SubResource("Gradient_g7srb")
+width = 12
+height = 16
 fill_to = Vector2(0, 0)
 
 [node name="WinMenu" type="Control"]
@@ -203,12 +232,67 @@ text = "Yes leave"
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 z_index = 1
+amount = 10
 texture = SubResource("GradientTexture2D_qvaom")
 emission_shape = 3
 emission_rect_extents = Vector2(1000, 550)
 direction = Vector2(1, 5)
 initial_velocity_min = 51.54
 initial_velocity_max = 278.35
+angular_velocity_min = -40.0
+angular_velocity_max = 40.0
+orbit_velocity_min = -0.1
+orbit_velocity_max = 0.1
+angle_min = -66.8
+angle_max = 59.4
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
+z_index = 1
+amount = 10
+texture = SubResource("GradientTexture2D_8lxq1")
+emission_shape = 3
+emission_rect_extents = Vector2(1000, 550)
+direction = Vector2(1, 5)
+initial_velocity_min = 51.54
+initial_velocity_max = 278.35
+angular_velocity_min = -40.0
+angular_velocity_max = 40.0
+orbit_velocity_min = -0.1
+orbit_velocity_max = 0.1
+angle_min = -66.8
+angle_max = 59.4
+
+[node name="CPUParticles2D3" type="CPUParticles2D" parent="."]
+z_index = 1
+amount = 10
+texture = SubResource("GradientTexture2D_g7srb")
+emission_shape = 3
+emission_rect_extents = Vector2(1000, 550)
+direction = Vector2(1, 5)
+initial_velocity_min = 51.54
+initial_velocity_max = 278.35
+angular_velocity_min = -40.0
+angular_velocity_max = 40.0
+orbit_velocity_min = -0.1
+orbit_velocity_max = 0.1
+angle_min = -66.8
+angle_max = 59.4
+
+[node name="CPUParticles2D4" type="CPUParticles2D" parent="."]
+z_index = 1
+amount = 10
+texture = SubResource("GradientTexture2D_7pd2s")
+emission_shape = 3
+emission_rect_extents = Vector2(1000, 550)
+direction = Vector2(1, 5)
+initial_velocity_min = 51.54
+initial_velocity_max = 278.35
+angular_velocity_min = -40.0
+angular_velocity_max = 40.0
+orbit_velocity_min = -0.1
+orbit_velocity_max = 0.1
+angle_min = -66.8
+angle_max = 59.4
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Start" to="." method="_on_start_pressed"]

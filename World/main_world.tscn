@@ -396,7 +396,7 @@ position = Vector2(1355, -20)
 position = Vector2(45, 135)
 rotation = -3.14159
 flow_puzzle = NodePath("../CanvasLayer/PipePuzzle")
-colour = 1
+colour = 2
 
 [node name="Sprite2D2" type="Sprite2D" parent="WaterLevel/Plug3"]
 position = Vector2(-1.00002, 9.00001)
