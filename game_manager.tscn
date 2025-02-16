@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://j0qiih7qbqsb"]
+
+[ext_resource type="Script" uid="uid://b7rylbflu3nph" path="res://gamemanager.gd" id="1_70yv6"]
+[ext_resource type="AudioStream" uid="uid://d3tfkjyxvnc7b" path="res://Audio/playerclickup.wav" id="2_o2178"]
+[ext_resource type="AudioStream" uid="uid://biy3yjtg0uum1" path="res://Audio/playerelease.wav" id="3_d5upp"]
+[ext_resource type="AudioStream" uid="uid://bkogh4rvdewjo" path="res://Audio/song1WIP.wav" id="4_d5upp"]
+
+[node name="GameManager" type="Node"]
+script = ExtResource("1_70yv6")
+
+[node name="MousePressSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_o2178")
+pitch_scale = 1.75
+
+[node name="MouseReleaseSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_d5upp")
+volume_db = 12.0
+
+[node name="WorldMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_d5upp")
+autoplay = true
+
+[connection signal="finished" from="WorldMusic" to="." method="_on_audio_stream_player_finished"]
