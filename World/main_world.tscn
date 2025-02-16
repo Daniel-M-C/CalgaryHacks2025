@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://i5nl44n31aam"]
+[gd_scene load_steps=5 format=3 uid="uid://i5nl44n31aam"]
 
 [ext_resource type="PackedScene" uid="uid://dwryfod28727j" path="res://World/InteractibleObjects/draggable_platform.tscn" id="1_16qqv"]
 [ext_resource type="PackedScene" uid="uid://ctkpfei25vhd4" path="res://player_one.tscn" id="2_rocas"]
 [ext_resource type="PackedScene" uid="uid://bhsrdhvqho0uw" path="res://cable.tscn" id="3_r6447"]
+[ext_resource type="PackedScene" uid="uid://cvl2y5enk7w5q" path="res://plug.tscn" id="4_r6447"]
 
 [node name="MainWorld" type="Node2D"]
 
@@ -20,3 +21,11 @@ lock_y = true
 
 [node name="Cable" parent="." instance=ExtResource("3_r6447")]
 position = Vector2(484, 232)
+
+[node name="Cable2" parent="." instance=ExtResource("3_r6447")]
+position = Vector2(264, 461)
+rotation = -2.72455
+
+[node name="Plug" parent="." instance=ExtResource("4_r6447")]
+position = Vector2(435, 429)
+rotation = -0.111598

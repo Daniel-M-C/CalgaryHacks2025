@@ -7,6 +7,7 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jqrxp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lxnu8"]
+size = Vector2(25, 25)
 
 [node name="Cable" type="Node2D"]
 
@@ -29,7 +30,8 @@ node_b = NodePath("../CableBody")
 
 [node name="CableBody" type="RigidBody2D" parent="."]
 position = Vector2(1, 30)
-collision_layer = 2
+collision_layer = 0
+inertia = 10.0
 
 [node name="Sprite2D" type="Sprite2D" parent="CableBody"]
 scale = Vector2(0.25, 0.25)
@@ -46,7 +48,8 @@ node_b = NodePath("../CableBody2")
 
 [node name="CableBody2" type="RigidBody2D" parent="."]
 position = Vector2(0, 64)
-collision_layer = 2
+collision_layer = 0
+inertia = 10.0
 
 [node name="Sprite2D" type="Sprite2D" parent="CableBody2"]
 scale = Vector2(0.25, 0.25)
@@ -62,7 +65,8 @@ node_b = NodePath("../CableBody3")
 
 [node name="CableBody3" type="RigidBody2D" parent="."]
 position = Vector2(0, 97)
-collision_layer = 2
+collision_layer = 0
+inertia = 10.0
 
 [node name="Sprite2D" type="Sprite2D" parent="CableBody3"]
 scale = Vector2(0.25, 0.25)
@@ -79,7 +83,8 @@ node_b = NodePath("../CableBody4")
 
 [node name="CableBody4" type="RigidBody2D" parent="."]
 position = Vector2(-2, 135)
-collision_layer = 2
+collision_layer = 0
+inertia = 10.0
 
 [node name="Sprite2D" type="Sprite2D" parent="CableBody4"]
 scale = Vector2(0.25, 0.25)
@@ -95,7 +100,8 @@ node_b = NodePath("../CableBody5")
 
 [node name="CableBody5" type="RigidBody2D" parent="."]
 position = Vector2(-1, 169)
-collision_layer = 2
+collision_layer = 0
+inertia = 10.0
 
 [node name="Sprite2D" type="Sprite2D" parent="CableBody5"]
 scale = Vector2(0.25, 0.25)
@@ -112,7 +118,7 @@ node_b = NodePath("../CableEnd")
 [node name="CableEnd" type="RigidBody2D" parent="."]
 position = Vector2(-3, 205)
 collision_layer = 4
-collision_mask = 4
+inertia = 10.0
 
 [node name="Sprite2D" type="Sprite2D" parent="CableEnd"]
 scale = Vector2(0.25, 0.25)
