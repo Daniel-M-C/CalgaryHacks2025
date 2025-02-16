@@ -1,9 +1,18 @@
 @tool
 extends Button
 
+enum PIPE_COLOR {
+	RED,
+	GREEN,
+	YELLOW
+}
+@export var color : PIPE_COLOR = PIPE_COLOR.RED:
+	set(val):
+		color = val
+		
 
 ## As up right down left
-var default_used_ports : Array[bool] = [true, false, true, false]
+@export var default_used_ports : Array[bool] = [false, false, false, false]
 @onready var true_used_prots : Array[bool] = default_used_ports
 
 enum PIPE_TYPE {
@@ -50,6 +59,10 @@ var texture : Texture2D :
 ## goes up two four
 @export var starting_rotation : int = 0:
 	set(val):
+		if not is_inside_tree():
+			await tree_entered
+			await get_tree().process_frame
+			
 		# reset so things aren't weird
 		rotation = 0
 		true_used_prots = default_used_ports 
@@ -62,11 +75,32 @@ var texture : Texture2D :
 		for i in range(val):
 			rotate_once()
 
-#@export var full : bool = false:
-#	set(val):
+@onready var full_indicator: TextureRect = $FullIndicator
+
+## Done as an int so that it counts how many are filling it
+## Filling is done in reverse 
+## aaa nvm
+@export var full : bool = false:
+	set(val):
+		full = val
+		if not is_inside_tree():
+			await tree_entered
+			await get_tree().process_frame
+		# fills the rest in a cascade
+		if full :
+			for i in range(4):
+				if true_used_prots[i]:
+					if get_neighbour(i) and not get_neighbour(i).full and \
+						# check that it's receiving there.
+						get_neighbour(i).true_used_prots[(i + 2) % 4]:
+						get_neighbour(i).full = true
 		
+			await get_tree().process_frame
+			full_indicator.visible = full
 
 func _ready():
+	# runs the setter
+	#starting_rotation = starting_rotation
 	pass
 
 #Only expands horizontally, then it is made square here. #Can't fill vertically, because that would squish them all into the screen and remove scroll functionality. #AspectRatioContainer didn't work because the button just overflows the Continer. 
@@ -81,7 +115,7 @@ func rotate_once() :
 	
 	# just rotates the values clockwise.
 	# addmitedly not the prettiest way of doing this.
-	var temp_port : bool = default_used_ports[1]
+	var temp_port : bool = default_used_ports[0]
 	for i in 3:
 		default_used_ports[i] = default_used_ports[i+1]
 	
@@ -95,6 +129,8 @@ func get_neighbour(direction : int) -> Control:
 	
 	var self_index = int(name.trim_prefix("PipeSection"))
 	var looking_index = 0
+	if looking_index == 4:
+		pass
 	match direction:
 		0:
 			looking_index = self_index - 6
@@ -110,5 +146,11 @@ func get_neighbour(direction : int) -> Control:
 	else:
 		return null
 
-func fill_with_water() -> null:
-	pass
+func fill_with_water() -> void:
+	## Not used ?
+	full = true
+	
+	for i in range(4):
+		if true_used_prots[i]:
+			if get_neighbour(i):
+				get_neighbour(i).full = true

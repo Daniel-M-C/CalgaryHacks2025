@@ -10,3 +10,4 @@
 offset_left = -20.0
 offset_right = 0.0
 size_flags_stretch_ratio = 0.0
+fill_dummy = true
