@@ -1,37 +1,40 @@
-[gd_scene load_steps=6 format=3 uid="uid://i5nl44n31aam"]
+[gd_scene load_steps=7 format=3 uid="uid://i5nl44n31aam"]
 
 [ext_resource type="PackedScene" uid="uid://dwryfod28727j" path="res://World/InteractibleObjects/draggable_platform.tscn" id="1_16qqv"]
 [ext_resource type="PackedScene" uid="uid://ctkpfei25vhd4" path="res://Animal/player_one.tscn" id="2_rocas"]
 [ext_resource type="PackedScene" uid="uid://bhsrdhvqho0uw" path="res://World/AnimalInteract/cable.tscn" id="3_r6447"]
 [ext_resource type="PackedScene" uid="uid://cvl2y5enk7w5q" path="res://World/AnimalInteract/plug.tscn" id="5_8h63e"]
 [ext_resource type="PackedScene" uid="uid://bl62rm785ghlx" path="res://World/InteractibleObjects/pipe_puzzle.tscn" id="5_8rdcw"]
+[ext_resource type="PackedScene" uid="uid://bruuxa7166cbx" path="res://World/AnimalInteract/sparkes.tscn" id="6_8h63e"]
 
 [node name="MainWorld" type="Node2D"]
 
-[node name="DraggablePlatform" parent="." instance=ExtResource("1_16qqv")]
+[node name="WaterLevel" type="Node2D" parent="."]
+
+[node name="DraggablePlatform" parent="WaterLevel" instance=ExtResource("1_16qqv")]
 position = Vector2(345, 212)
 lock_x = true
 
-[node name="PlayerOne" parent="." instance=ExtResource("2_rocas")]
+[node name="PlayerOne" parent="WaterLevel" instance=ExtResource("2_rocas")]
 position = Vector2(393, 369)
 
-[node name="DraggablePlatform2" parent="." instance=ExtResource("1_16qqv")]
+[node name="DraggablePlatform2" parent="WaterLevel" instance=ExtResource("1_16qqv")]
 position = Vector2(402, 508)
 scale = Vector2(15.5215, 0.871832)
 lock_y = true
 
-[node name="Cable" parent="." instance=ExtResource("3_r6447")]
+[node name="Cable" parent="WaterLevel" instance=ExtResource("3_r6447")]
 position = Vector2(484, 232)
 
-[node name="Plug" parent="." node_paths=PackedStringArray("start_cable", "flow_puzzle") instance=ExtResource("5_8h63e")]
+[node name="Plug" parent="WaterLevel" node_paths=PackedStringArray("start_cable", "flow_puzzle") instance=ExtResource("5_8h63e")]
 position = Vector2(624, 403)
 start_cable = NodePath("../Cable")
 flow_puzzle = NodePath("../CanvasLayer/PipePuzzle")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="WaterLevel"]
 layer = -2
 
-[node name="PipePuzzle" parent="CanvasLayer" instance=ExtResource("5_8rdcw")]
+[node name="PipePuzzle" parent="WaterLevel/CanvasLayer" instance=ExtResource("5_8rdcw")]
 
 [node name="JumpingLevel" type="Node2D" parent="."]
 
@@ -51,3 +54,12 @@ position = Vector2(1600, 550)
 
 [node name="DraggablePlatform3" parent="JumpingLevel" instance=ExtResource("1_16qqv")]
 position = Vector2(1800, 550)
+
+[node name="Sparkes" parent="JumpingLevel" instance=ExtResource("6_8h63e")]
+position = Vector2(1400, 470)
+
+[node name="Sparkes2" parent="JumpingLevel" instance=ExtResource("6_8h63e")]
+position = Vector2(1600, 470)
+
+[node name="Sparkes3" parent="JumpingLevel" instance=ExtResource("6_8h63e")]
+position = Vector2(1800, 470)

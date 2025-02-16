@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bd4baj72jb54t" path="res://Assets/icon.svg" id="2_blsnk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_blsnk"]
+size = Vector2(60, 10)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8mq5r"]
 animations = [{
@@ -25,4 +26,5 @@ script = ExtResource("1_1f18f")
 shape = SubResource("RectangleShape2D_blsnk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.6, 0.1)
 sprite_frames = SubResource("SpriteFrames_8mq5r")
