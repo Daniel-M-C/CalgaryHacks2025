@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://fmandpu6kp18"]
+[gd_scene load_steps=5 format=3 uid="uid://j81n70ulqdnl"]
 
 [ext_resource type="Texture2D" uid="uid://3awjawp5a12h" path="res://Assets/heretic-menu-game.png" id="1_06t4h"]
-[ext_resource type="Script" uid="uid://08xiuy8rweiq" path="res://main_menu.gd" id="1_7vrkn"]
+[ext_resource type="Script" path="res://main_menu.gd" id="1_7vrkn"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fu7sn"]
 
