@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://i5nl44n31aam"]
+[gd_scene load_steps=10 format=3 uid="uid://i5nl44n31aam"]
 
 [ext_resource type="PackedScene" uid="uid://dwryfod28727j" path="res://World/InteractibleObjects/draggable_platform.tscn" id="1_16qqv"]
 [ext_resource type="Script" path="res://World/camera_2d.gd" id="1_cyt26"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cvl2y5enk7w5q" path="res://World/AnimalInteract/plug.tscn" id="5_8h63e"]
 [ext_resource type="PackedScene" uid="uid://bl62rm785ghlx" path="res://World/InteractibleObjects/pipe_puzzle.tscn" id="5_8rdcw"]
 [ext_resource type="PackedScene" uid="uid://bruuxa7166cbx" path="res://World/AnimalInteract/sparkes.tscn" id="6_8h63e"]
+[ext_resource type="PackedScene" uid="uid://e2smnpjo0mfw" path="res://water.tscn" id="8_4v305"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8h63e"]
 size = Vector2(40, 70)
@@ -99,5 +100,8 @@ layer = -2
 visible = false
 
 [node name="PipePuzzle" parent="WaterLevel/CanvasLayer" instance=ExtResource("5_8rdcw")]
+
+[node name="water" parent="WaterLevel" instance=ExtResource("8_4v305")]
+position = Vector2(910, 631)
 
 [connection signal="body_entered" from="JumpingLevel/CameraTrigger" to="Camera2D" method="_on_camera_trigger_body_entered"]

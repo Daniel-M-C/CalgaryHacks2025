@@ -1,10 +1,11 @@
-[gd_scene load_steps=59 format=3 uid="uid://ctkpfei25vhd4"]
+[gd_scene load_steps=60 format=3 uid="uid://ctkpfei25vhd4"]
 
 [ext_resource type="Script" uid="uid://dr5a27ra4y5ll" path="res://Animal/player_one.gd" id="1_oi0yx"]
 [ext_resource type="Texture2D" uid="uid://bd4baj72jb54t" path="res://Assets/icon.svg" id="2_chexb"]
 [ext_resource type="Texture2D" uid="uid://dp8qd1mngerdh" path="res://Assets/Sprites/IMG_0690.jpg" id="2_mn4xn"]
 [ext_resource type="AudioStream" uid="uid://c0iqnvgkyy3vq" path="res://Audio/bark.wav" id="3_qx3xb"]
 [ext_resource type="AudioStream" uid="uid://d0b7p4iktdpaa" path="res://Audio/realjump.wav" id="4_0h8gg"]
+[ext_resource type="AudioStream" uid="uid://gj7kpr540vlh" path="res://Audio/hurt.wav" id="4_4yms3"]
 [ext_resource type="Texture2D" uid="uid://b8omg07bnht3t" path="res://Assets/Sprites/Damage/damage1.png" id="5_4yms3"]
 [ext_resource type="Texture2D" uid="uid://db5n3hjjlstew" path="res://Assets/Sprites/Idle/Base1_closed.png" id="5_qgtrj"]
 [ext_resource type="Texture2D" uid="uid://0qfv17t0cdph" path="res://Assets/Sprites/Damage/damage2.png" id="6_x4kdc"]
@@ -163,7 +164,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_t2uow")
 }],
-"loop": true,
+"loop": false,
 "name": &"damage",
 "speed": 5.0
 }, {
@@ -266,9 +267,37 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Curve" id="Curve_oi0yx"]
+_data = [Vector2(0.0367647, 0.988764), 0.0, 0.0, 0, 0, Vector2(0.911765, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_chexb"]
+curve = SubResource("Curve_oi0yx")
+
+[sub_resource type="Gradient" id="Gradient_qx3xb"]
+colors = PackedColorArray(0.827451, 0, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_0h8gg"]
+gradient = SubResource("Gradient_qx3xb")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_oe7yg"]
+lifetime_randomness = 1.0
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(20, 15, 1)
+angle_min = -90.0
+angle_max = 90.0
+spread = 100.0
+gravity = Vector3(0, 50, 0)
+scale_max = 10.0
+color = Color(0.82881, 2.71939e-06, 5.77569e-07, 1)
+color_ramp = SubResource("GradientTexture1D_0h8gg")
+alpha_curve = SubResource("CurveTexture_chexb")
+
 [node name="PlayerOne" type="CharacterBody2D" groups=["player"]]
 z_index = 3
-collision_layer = 65536
+collision_layer = 65552
+collision_mask = 17
 script = ExtResource("1_oi0yx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -283,12 +312,6 @@ collision_mask = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2(-2, 9)
 shape = SubResource("CircleShape2D_oi0yx")
-
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-position = Vector2(0, -2)
-emitting = false
-amount = 24
-process_material = SubResource("ParticleProcessMaterial_oe7yg")
 
 [node name="Tail" type="Node2D" parent="."]
 z_index = 2
@@ -472,6 +495,9 @@ softness = 5.0
 [node name="BarkSound" type="AudioStreamPlayer2D" parent="Audio"]
 stream = ExtResource("3_qx3xb")
 
+[node name="HurtSound" type="AudioStreamPlayer2D" parent="Audio"]
+stream = ExtResource("4_4yms3")
+
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="Audio"]
 stream = ExtResource("4_0h8gg")
 
@@ -481,11 +507,18 @@ stream = ExtResource("4_0h8gg")
 z_index = 3
 position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_0h8gg")
-animation = &"fall"
+animation = &"damage"
 
 [node name="PointLight2D" type="PointLight2D" parent="Sprite/AnimatedSprite2D"]
 visible = false
 texture = ExtResource("2_chexb")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Sprite"]
+z_index = 4
+position = Vector2(0, -2)
+emitting = false
+amount = 32
+process_material = SubResource("ParticleProcessMaterial_oe7yg")
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="body_entered" from="HurtBox" to="." method="_on_hurt_box_body_entered"]
