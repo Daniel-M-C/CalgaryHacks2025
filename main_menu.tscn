@@ -1,11 +1,45 @@
-[gd_scene load_steps=5 format=3 uid="uid://j81n70ulqdnl"]
+[gd_scene load_steps=13 format=3 uid="uid://j81n70ulqdnl"]
 
-[ext_resource type="Texture2D" uid="uid://3awjawp5a12h" path="res://Assets/heretic-menu-game.png" id="1_06t4h"]
-[ext_resource type="Script" uid="uid://08xiuy8rweiq" path="res://main_menu.gd" id="1_7vrkn"]
+[ext_resource type="Texture2D" uid="uid://c0c4k43fpbac0" path="res://Assets/heretic-menu-game.png" id="1_06t4h"]
+[ext_resource type="Script" path="res://main_menu.gd" id="1_7vrkn"]
+[ext_resource type="Texture2D" uid="uid://bn7ap3hbi6fl6" path="res://Assets/title screen animated/Untitled_Artwork-5.png" id="2_qe12f"]
+[ext_resource type="Texture2D" uid="uid://jrfau1kuys65" path="res://Assets/title screen animated/Untitled_Artwork-4.png" id="3_8qtwp"]
+[ext_resource type="Texture2D" uid="uid://cbo6wejds8fji" path="res://Assets/title screen animated/Untitled_Artwork-3.png" id="4_dy7ct"]
+[ext_resource type="Texture2D" uid="uid://buy8ya086xrwr" path="res://Assets/title screen animated/Untitled_Artwork-2.png" id="5_0o4t1"]
+[ext_resource type="Texture2D" uid="uid://8xuwy2ghualk" path="res://Assets/title screen animated/Untitled_Artwork-1.png" id="6_0k4wn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j5v2v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qe12f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8qtwp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dy7ct")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0o4t1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_0k4wn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fu7sn"]
 
+[sub_resource type="SystemFont" id="SystemFont_qe12f"]
+font_names = PackedStringArray("Karumbi", "Comfortaa", "AR PL UMing CN", "Andika")
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jix8l"]
+
+[sub_resource type="SystemFont" id="SystemFont_8qtwp"]
+font_names = PackedStringArray("Karumbi")
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -18,6 +52,19 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_7vrkn")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
+position = Vector2(576, 324)
+scale = Vector2(3.2, 2.53125)
+sprite_frames = SubResource("SpriteFrames_j5v2v")
+autoplay = "default"
+frame_progress = 0.515757
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -28,6 +75,7 @@ grow_vertical = 2
 color = Color(0.392157, 0.435294, 0.231373, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+z_index = 10
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -35,7 +83,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 64
-theme_override_constants/margin_top = 64
+theme_override_constants/margin_top = 194
 theme_override_constants/margin_right = 64
 theme_override_constants/margin_bottom = 64
 metadata/_edit_use_anchors_ = true
@@ -46,6 +94,18 @@ layout_mode = 2
 [node name="Heretic-menu-game" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
 position = Vector2(505, 68)
 texture = ExtResource("1_06t4h")
+
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/Heretic-menu-game"]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -217.0
+offset_top = -70.0
+offset_right = -217.0
+offset_bottom = -70.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -58,6 +118,7 @@ alignment = 1
 
 [node name="Start" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_qe12f")
 theme_override_font_sizes/font_size = 64
 text = "Start"
 
@@ -68,6 +129,7 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_jix8l")
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_8qtwp")
 theme_override_font_sizes/font_size = 64
 text = "Quit"
 
