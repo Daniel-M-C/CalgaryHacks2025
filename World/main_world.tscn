@@ -2,17 +2,17 @@
 
 [ext_resource type="PackedScene" uid="uid://dwryfod28727j" path="res://World/InteractibleObjects/draggable_platform.tscn" id="1_16qqv"]
 [ext_resource type="Script" uid="uid://b5n1cdon6r4qt" path="res://World/camera_2d.gd" id="1_cyt26"]
-[ext_resource type="Texture2D" uid="uid://bmwblvaetb8ae" path="res://Assets/Environment/server_bg.png" id="2_qhfov"]
+[ext_resource type="Texture2D" uid="uid://vx0hdfnpkpc2" path="res://Assets/Environment/server_bg.png" id="2_qhfov"]
 [ext_resource type="PackedScene" uid="uid://ctkpfei25vhd4" path="res://Animal/player_one.tscn" id="2_rocas"]
-[ext_resource type="Texture2D" uid="uid://brdp78tbkcx81" path="res://Assets/Environment/tilemap_nature.png" id="3_hs2qd"]
+[ext_resource type="Texture2D" uid="uid://i0pgre4sjcmg" path="res://Assets/Environment/tilemap_nature.png" id="3_hs2qd"]
 [ext_resource type="PackedScene" uid="uid://bhsrdhvqho0uw" path="res://World/AnimalInteract/cable.tscn" id="3_r6447"]
 [ext_resource type="PackedScene" uid="uid://cvl2y5enk7w5q" path="res://World/AnimalInteract/plug.tscn" id="5_8h63e"]
 [ext_resource type="PackedScene" uid="uid://bl62rm785ghlx" path="res://World/InteractibleObjects/pipe_puzzle.tscn" id="5_8rdcw"]
 [ext_resource type="PackedScene" uid="uid://bruuxa7166cbx" path="res://World/AnimalInteract/sparkes.tscn" id="6_8h63e"]
 [ext_resource type="PackedScene" uid="uid://e2smnpjo0mfw" path="res://water.tscn" id="8_4v305"]
-[ext_resource type="Texture2D" uid="uid://c6ee31o62p5i2" path="res://Assets/Environment/tile_cobble.png" id="10_h3tjc"]
-[ext_resource type="Texture2D" uid="uid://cwdg54x3ob8oo" path="res://Assets/Environment/tile_motherboard.png" id="11_hs2qd"]
-[ext_resource type="Texture2D" uid="uid://mvjft0ealv85" path="res://Assets/Environment/tilemap_tech.png" id="13_6syc8"]
+[ext_resource type="Texture2D" uid="uid://b8t1vs6px1qsn" path="res://Assets/Environment/tile_cobble.png" id="10_h3tjc"]
+[ext_resource type="Texture2D" uid="uid://dcknngv3cpc5p" path="res://Assets/Environment/tile_motherboard.png" id="11_hs2qd"]
+[ext_resource type="Texture2D" uid="uid://doiuuh5igjtsv" path="res://Assets/Environment/tilemap_tech.png" id="13_6syc8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8h63e"]
 size = Vector2(200, 30)
@@ -221,12 +221,12 @@ sources/0 = SubResource("TileSetAtlasSource_syrwj")
 offset = Vector2(576, 324)
 script = ExtResource("1_cyt26")
 puzzle_node = NodePath("../WaterLevel/CanvasLayer/PipePuzzle")
-checkpoint_positions = Array[Vector2]([Vector2(70, 440), Vector2(1240, 354)])
+checkpoint_positions = Array[Vector2]([Vector2(70, 440), Vector2(1240, 354), Vector2(2170, 360)])
 player = NodePath("../PlayerOne")
 water = NodePath("../WaterLevel/water")
 
 [node name="Marker2D" type="Marker2D" parent="Camera2D"]
-position = Vector2(1239, 370)
+position = Vector2(2170, 360)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -356,12 +356,11 @@ scale = Vector2(2.50781, 2.50781)
 texture = ExtResource("2_qhfov")
 
 [node name="WaterLevel" type="Node2D" parent="."]
-position = Vector2(963, -8)
+position = Vector2(1355, -20)
 
 [node name="DraggablePlatform" parent="WaterLevel" instance=ExtResource("1_16qqv")]
-position = Vector2(351, 350)
+position = Vector2(345, 212)
 lock_x = true
-min_x = 160.0
 max_y = 450.0
 
 [node name="Cable" parent="WaterLevel" instance=ExtResource("3_r6447")]
@@ -376,10 +375,7 @@ flow_puzzle = NodePath("../CanvasLayer/PipePuzzle")
 layer = -2
 
 [node name="PipePuzzle" parent="WaterLevel/CanvasLayer" instance=ExtResource("5_8rdcw")]
-offset_left = 1402.19
-offset_top = -9.672
-offset_right = 1341.38
-offset_bottom = 22.48
+visible = false
 
 [node name="water" parent="WaterLevel" instance=ExtResource("8_4v305")]
 position = Vector2(1052, 626)
@@ -388,13 +384,6 @@ position = Vector2(1052, 626)
 position = Vector2(318, 123)
 flow_puzzle = NodePath("../CanvasLayer/PipePuzzle")
 colour = 1
-
-[node name="DraggablePlatform2" parent="WaterLevel" instance=ExtResource("1_16qqv")]
-position = Vector2(1027, 302)
-platform_type = 1
-lock_x = true
-max_y = 300.0
-min_y = 150.0
 
 [node name="JumpingLevel" type="Node2D" parent="."]
 position = Vector2(203, -20)
@@ -422,6 +411,14 @@ collision_layer = 8
 collision_mask = 0
 damage = 10000
 platform_type = 3
+
+[node name="DraggablePlatform" parent="JumpingLevel" instance=ExtResource("1_16qqv")]
+position = Vector2(246, 570.5)
+scale = Vector2(10, 0.3)
+
+[node name="Floor" parent="JumpingLevel" instance=ExtResource("1_16qqv")]
+position = Vector2(1294, 632)
+scale = Vector2(100, 0.25)
 
 [node name="DraggablePlatform" parent="JumpingLevel" instance=ExtResource("1_16qqv")]
 position = Vector2(246, 570.5)

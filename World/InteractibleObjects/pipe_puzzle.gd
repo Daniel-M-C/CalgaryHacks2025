@@ -62,6 +62,7 @@ func is_color_active(color : int):
 
 
 func _on_visibility_changed() -> void:
-	await get_tree().process_frame
-	reset_stuff()
+	if is_inside_tree():
+		await get_tree().process_frame
+		reset_stuff()
 	pass # Replace with function body.
