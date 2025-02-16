@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bhsrdhvqho0uw"]
+[gd_scene load_steps=6 format=3 uid="uid://bhsrdhvqho0uw"]
 
-[ext_resource type="Texture2D" uid="uid://bd4baj72jb54t" path="res://Assets/icon.svg" id="1_omul7"]
+[ext_resource type="Texture2D" uid="uid://c2s7gc62ypbd" path="res://Assets/Environment/cable_questionable.png" id="1_gflsu"]
+[ext_resource type="Texture2D" uid="uid://qjdqosl62np1" path="res://Assets/Environment/plug.png" id="2_yuluy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ytm0"]
 
@@ -17,7 +18,7 @@ scale = Vector2(0.25, 0.25)
 collision_layer = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="CableBlock"]
-texture = ExtResource("1_omul7")
+texture = ExtResource("1_gflsu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CableBlock"]
 position = Vector2(1, -1)
@@ -34,8 +35,7 @@ collision_layer = 0
 inertia = 10.0
 
 [node name="Sprite2D" type="Sprite2D" parent="CableBody"]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_omul7")
+texture = ExtResource("1_gflsu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CableBody"]
 position = Vector2(0, 1)
@@ -52,8 +52,7 @@ collision_layer = 0
 inertia = 10.0
 
 [node name="Sprite2D" type="Sprite2D" parent="CableBody2"]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_omul7")
+texture = ExtResource("1_gflsu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CableBody2"]
 shape = SubResource("CapsuleShape2D_jqrxp")
@@ -69,8 +68,7 @@ collision_layer = 0
 inertia = 10.0
 
 [node name="Sprite2D" type="Sprite2D" parent="CableBody3"]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_omul7")
+texture = ExtResource("1_gflsu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CableBody3"]
 position = Vector2(0, 3)
@@ -87,8 +85,7 @@ collision_layer = 0
 inertia = 10.0
 
 [node name="Sprite2D" type="Sprite2D" parent="CableBody4"]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_omul7")
+texture = ExtResource("1_gflsu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CableBody4"]
 shape = SubResource("CapsuleShape2D_jqrxp")
@@ -104,8 +101,7 @@ collision_layer = 0
 inertia = 10.0
 
 [node name="Sprite2D" type="Sprite2D" parent="CableBody5"]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_omul7")
+texture = ExtResource("1_gflsu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CableBody5"]
 shape = SubResource("CapsuleShape2D_jqrxp")
@@ -121,8 +117,8 @@ collision_layer = 4
 inertia = 10.0
 
 [node name="Sprite2D" type="Sprite2D" parent="CableEnd"]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_omul7")
+rotation = 1.5708
+texture = ExtResource("2_yuluy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CableEnd"]
 position = Vector2(0, -1)
