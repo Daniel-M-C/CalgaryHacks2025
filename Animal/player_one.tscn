@@ -1,9 +1,9 @@
 [gd_scene load_steps=16 format=3 uid="uid://ctkpfei25vhd4"]
 
-[ext_resource type="Script" uid="uid://dr5a27ra4y5ll" path="res://player_one.gd" id="1_oi0yx"]
-[ext_resource type="Texture2D" uid="uid://bd4baj72jb54t" path="res://icon.svg" id="2_chexb"]
-[ext_resource type="AudioStream" uid="uid://c0iqnvgkyy3vq" path="res://bark.wav" id="3_qx3xb"]
-[ext_resource type="AudioStream" uid="uid://d0b7p4iktdpaa" path="res://realjump.wav" id="4_0h8gg"]
+[ext_resource type="Script" uid="uid://dr5a27ra4y5ll" path="res://Animal/player_one.gd" id="1_oi0yx"]
+[ext_resource type="Texture2D" uid="uid://bd4baj72jb54t" path="res://Assets/icon.svg" id="2_chexb"]
+[ext_resource type="AudioStream" uid="uid://c0iqnvgkyy3vq" path="res://Audio/bark.wav" id="3_qx3xb"]
+[ext_resource type="AudioStream" uid="uid://d0b7p4iktdpaa" path="res://Audio/realjump.wav" id="4_0h8gg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oe7yg"]
 radius = 14.0
