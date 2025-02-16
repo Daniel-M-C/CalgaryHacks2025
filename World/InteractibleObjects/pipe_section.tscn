@@ -1,19 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://c8bp1lii36kv7"]
+[gd_scene load_steps=2 format=3 uid="uid://c8bp1lii36kv7"]
 
-[ext_resource type="Texture2D" uid="uid://bd4baj72jb54t" path="res://icon.svg" id="1_bd14j"]
 [ext_resource type="Script" uid="uid://p4mfgn8k8mtv" path="res://World/InteractibleObjects/pipe_section.gd" id="2_dqvcp"]
 
-[node name="PipeSection" type="TextureButton"]
+[node name="PipeSection" type="Button"]
+custom_minimum_size = Vector2(0, 1152)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = 504.0
 grow_horizontal = 2
 size_flags_horizontal = 15
 size_flags_vertical = 0
 action_mode = 0
-texture_normal = ExtResource("1_bd14j")
-ignore_texture_size = true
-stretch_mode = 5
+expand_icon = true
 script = ExtResource("2_dqvcp")
 
+[connection signal="pressed" from="." to="." method="_on_pressed"]
 [connection signal="resized" from="." to="." method="_on_resized"]
