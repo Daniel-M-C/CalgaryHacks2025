@@ -23,7 +23,7 @@ func _process(delta):
 			pass
 		_: 
 			pass
-	clamp(scale.y, 0, 1000)
+	clamp(scale.y, 0, 100)
 		
 	pass
 

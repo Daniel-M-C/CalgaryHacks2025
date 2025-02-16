@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://i5nl44n31aam"]
+[gd_scene load_steps=12 format=3 uid="uid://i5nl44n31aam"]
 
 [ext_resource type="PackedScene" uid="uid://dwryfod28727j" path="res://World/InteractibleObjects/draggable_platform.tscn" id="1_16qqv"]
 [ext_resource type="Script" uid="uid://b5n1cdon6r4qt" path="res://World/camera_2d.gd" id="1_cyt26"]
@@ -11,6 +11,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8h63e"]
 size = Vector2(40, 70)
+
+[sub_resource type="TileSet" id="TileSet_h3tjc"]
+tile_size = Vector2i(32, 32)
 
 [node name="MainWorld" type="Node2D"]
 
@@ -28,15 +31,19 @@ position = Vector2(1305, 412)
 [node name="PlayerOne" parent="." instance=ExtResource("2_rocas")]
 position = Vector2(71, 439)
 
-[node name="JumpingLevel" type="Node2D" parent="."]
+[node name="Backlayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(460, 0)
 
-[node name="Start" type="Marker2D" parent="JumpingLevel"]
-position = Vector2(0.5, 190.5)
-gizmo_extents = 460.0
+[node name="ServerBg" type="Sprite2D" parent="ParallaxBackground/Backlayer"]
+position = Vector2(244.75, 353.5)
+scale = Vector2(2.50781, 2.50781)
+texture = ExtResource("2_qhfov")
 
-[node name="End" type="Marker2D" parent="JumpingLevel"]
-position = Vector2(1152.5, 196.5)
-gizmo_extents = 456.6
+[node name="ServerBg2" type="Sprite2D" parent="ParallaxBackground/Backlayer"]
+position = Vector2(1181, 22)
+scale = Vector2(2.50781, 2.50781)
+texture = ExtResource("2_qhfov")
 
 [node name="Start2" parent="JumpingLevel" instance=ExtResource("1_16qqv")]
 position = Vector2(-23, 528)
@@ -46,9 +53,10 @@ scale = Vector2(2.67, 0.11)
 position = Vector2(16, 579)
 scale = Vector2(3.18, 0.115)
 
-[node name="Floor" parent="JumpingLevel" instance=ExtResource("1_16qqv")]
-position = Vector2(1294, 632)
-scale = Vector2(100, 0.25)
+[node name="ServerBg4" type="Sprite2D" parent="ParallaxBackground/Backlayer"]
+position = Vector2(1160.5, 681)
+scale = Vector2(2.50781, 2.50781)
+texture = ExtResource("2_qhfov")
 
 [node name="DraggablePlatform" parent="JumpingLevel" instance=ExtResource("1_16qqv")]
 position = Vector2(271, 646)
@@ -76,13 +84,70 @@ position = Vector2(747.5, 473)
 position = Vector2(1020, 528)
 scale = Vector2(4.555, 0.3)
 
-[node name="CameraTrigger" type="Area2D" parent="JumpingLevel"]
-position = Vector2(1083, 456)
-collision_layer = 65536
-collision_mask = 65536
+[node name="ServerBg12" type="Sprite2D" parent="ParallaxBackground/Backlayer"]
+position = Vector2(773.5, 895)
+scale = Vector2(2.50781, 2.50781)
+texture = ExtResource("2_qhfov")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="JumpingLevel/CameraTrigger"]
-shape = SubResource("RectangleShape2D_8h63e")
+[node name="ServerBg13" type="Sprite2D" parent="ParallaxBackground/Backlayer"]
+position = Vector2(1988.5, 394)
+scale = Vector2(2.50781, 2.50781)
+texture = ExtResource("2_qhfov")
+
+[node name="ServerBg14" type="Sprite2D" parent="ParallaxBackground/Backlayer"]
+position = Vector2(2924.75, 62.5)
+scale = Vector2(2.50781, 2.50781)
+texture = ExtResource("2_qhfov")
+
+[node name="ServerBg15" type="Sprite2D" parent="ParallaxBackground/Backlayer"]
+position = Vector2(1985.75, 62.5)
+scale = Vector2(2.50781, 2.50781)
+texture = ExtResource("2_qhfov")
+
+[node name="ServerBg16" type="Sprite2D" parent="ParallaxBackground/Backlayer"]
+position = Vector2(2904.25, 721.5)
+scale = Vector2(2.50781, 2.50781)
+texture = ExtResource("2_qhfov")
+
+[node name="ServerBg17" type="Sprite2D" parent="ParallaxBackground/Backlayer"]
+position = Vector2(3840.5, 390)
+scale = Vector2(2.50781, 2.50781)
+texture = ExtResource("2_qhfov")
+
+[node name="ServerBg18" type="Sprite2D" parent="ParallaxBackground/Backlayer"]
+position = Vector2(2901.5, 390)
+scale = Vector2(2.50781, 2.50781)
+texture = ExtResource("2_qhfov")
+
+[node name="ServerBg19" type="Sprite2D" parent="ParallaxBackground/Backlayer"]
+position = Vector2(1988.5, 819)
+scale = Vector2(2.50781, 2.50781)
+texture = ExtResource("2_qhfov")
+
+[node name="ServerBg20" type="Sprite2D" parent="ParallaxBackground/Backlayer"]
+position = Vector2(2924.75, 487.5)
+scale = Vector2(2.50781, 2.50781)
+texture = ExtResource("2_qhfov")
+
+[node name="ServerBg21" type="Sprite2D" parent="ParallaxBackground/Backlayer"]
+position = Vector2(1985.75, 487.5)
+scale = Vector2(2.50781, 2.50781)
+texture = ExtResource("2_qhfov")
+
+[node name="ServerBg22" type="Sprite2D" parent="ParallaxBackground/Backlayer"]
+position = Vector2(2904.25, 1146.5)
+scale = Vector2(2.50781, 2.50781)
+texture = ExtResource("2_qhfov")
+
+[node name="ServerBg23" type="Sprite2D" parent="ParallaxBackground/Backlayer"]
+position = Vector2(3840.5, 815)
+scale = Vector2(2.50781, 2.50781)
+texture = ExtResource("2_qhfov")
+
+[node name="ServerBg24" type="Sprite2D" parent="ParallaxBackground/Backlayer"]
+position = Vector2(2901.5, 815)
+scale = Vector2(2.50781, 2.50781)
+texture = ExtResource("2_qhfov")
 
 [node name="WaterLevel" type="Node2D" parent="."]
 position = Vector2(1152, 0)

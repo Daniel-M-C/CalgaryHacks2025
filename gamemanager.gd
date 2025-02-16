@@ -5,17 +5,11 @@ extends Node
 func _ready():
 	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 func _input(event):
 	if event.is_action_pressed("mouse_1"):
 		$MousePressSound.play()
 	if event.is_action_released("mouse_1"):
 		$MouseReleaseSound.play()
-
 
 func _on_audio_stream_player_finished():
 	$WorldMusic.play()
