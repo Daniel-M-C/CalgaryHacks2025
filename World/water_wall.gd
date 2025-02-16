@@ -3,7 +3,7 @@ extends StaticBody2D
 @export var pipe_puzzle : PipePuzzle
 
 var moving_down : bool = false
-var move_speed = 100
+var move_speed = 300
 
 func _ready():
 	await get_tree().process_frame
@@ -15,5 +15,5 @@ func move_down():
 	
 func _process(delta: float) -> void:
 	if moving_down:
-		position.y = position.y * move_speed * delta
+		position.y += move_speed * delta
 	
