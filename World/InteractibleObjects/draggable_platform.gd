@@ -48,11 +48,11 @@ enum PLATFORM_TYPE {
 			PLATFORM_TYPE.B:
 				sprite.texture = SERVER_B
 				sprite.scale.x = 2.2
-				collision_shape_rect.size = Vector2(102,165)
+				collision_shape_rect.size = Vector2(50,125)
 			PLATFORM_TYPE.C:
 				sprite.texture = SERVER_C
 				sprite.scale.x = 2.2
-				collision_shape_rect.size = Vector2(102,165)
+				collision_shape_rect.size = Vector2(50,125)
 			PLATFORM_TYPE.D:
 				sprite.texture = SERVER_D
 				sprite.scale.x = 2.2

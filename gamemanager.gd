@@ -10,14 +10,12 @@ func _process(delta):
 	if player:
 		if player.in_water and not_in_water_setup:
 			var time = $WorldMusic.get_playback_position()
-			$WaterMusic.seek(time)
-			$WaterMusic.play()
+			$WaterMusic.play(time)
 			$WorldMusic.stop()
 			not_in_water_setup = false
 		if !player.in_water and !not_in_water_setup:
 			var time = $WaterMusic.get_playback_position()
-			$WorldMusic.seek(time)
-			$WorldMusic.play()
+			$WorldMusic.play(time)
 			$WaterMusic.stop()
 			not_in_water_setup = true
 			

@@ -3,6 +3,7 @@ extends GridContainer
 
 @export var start_pipe : Button
 @export var end_pipe : Button
+@export var color :ColorRect
 
 enum PIPE_COLOR {
 	RED,
@@ -49,6 +50,7 @@ func reset_stuff():
 func re_flow_water():
 	## Resets and flows all pipes
 	for i in get_children():
+		if is_instance_of(i, PipeSection):
 			i.full = false
 	if start_pipe:
 			start_pipe.full = true
@@ -64,5 +66,9 @@ func is_color_active(color : int):
 func _on_visibility_changed() -> void:
 	if is_inside_tree():
 		await get_tree().process_frame
+		if color.visible == false:
+			color.visible = true
+		elif color.visible == true:
+			color.visible = false
 		reset_stuff()
 	pass # Replace with function body.

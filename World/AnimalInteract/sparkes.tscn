@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bruuxa7166cbx"]
 
 [ext_resource type="Script" uid="uid://rf2cvpa0hals" path="res://World/AnimalInteract/sparkes.gd" id="1_1f18f"]
-[ext_resource type="Texture2D" uid="uid://biylhaiopv24j" path="res://Assets/Environment/gatered.png" id="2_ofwlg"]
+[ext_resource type="Texture2D" uid="uid://cxcsriqu7tmda" path="res://Assets/Environment/gatered.png" id="2_ofwlg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_blsnk"]
 size = Vector2(60, 10)
