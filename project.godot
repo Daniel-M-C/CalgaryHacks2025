@@ -46,7 +46,7 @@ action={
 [layer_names]
 
 2d_physics/layer_1="Tiles"
-2d_physics/layer_2="nvm"
+2d_physics/layer_2="AnimalAction"
 2d_physics/layer_3="AnimalCarry"
 2d_physics/layer_4="PlayerHurter"
 

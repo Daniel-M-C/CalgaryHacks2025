@@ -1,22 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://ctkpfei25vhd4"]
+[gd_scene load_steps=16 format=3 uid="uid://ctkpfei25vhd4"]
 
 [ext_resource type="Script" uid="uid://dr5a27ra4y5ll" path="res://player_one.gd" id="1_oi0yx"]
 [ext_resource type="Texture2D" uid="uid://bd4baj72jb54t" path="res://icon.svg" id="2_chexb"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qx3xb"]
-atlas = ExtResource("2_chexb")
-region = Rect2(0, 0, 128, 128)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_0h8gg"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qx3xb")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[ext_resource type="AudioStream" uid="uid://c0iqnvgkyy3vq" path="res://bark.wav" id="3_qx3xb"]
+[ext_resource type="AudioStream" uid="uid://d0b7p4iktdpaa" path="res://realjump.wav" id="4_0h8gg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oe7yg"]
 radius = 14.0
@@ -54,15 +41,25 @@ height = 2.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_chexb"]
 radius = 37.054
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_qx3xb"]
+atlas = ExtResource("2_chexb")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0h8gg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qx3xb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="PlayerOne" type="CharacterBody2D"]
 z_index = 3
+collision_layer = 0
 script = ExtResource("1_oi0yx")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-z_index = 3
-position = Vector2(1.90735e-06, -0.999998)
-scale = Vector2(0.25, 0.25)
-sprite_frames = SubResource("SpriteFrames_0h8gg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_oe7yg")
@@ -94,6 +91,8 @@ node_b = NodePath("../TailBody")
 position = Vector2(0, -3)
 collision_layer = 0
 collision_mask = 0
+mass = 0.5
+inertia = 15.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Tail/TailBody"]
 scale = Vector2(0.1, 0.1)
@@ -112,6 +111,8 @@ node_b = NodePath("../TailBody2")
 position = Vector2(-9, -3)
 collision_layer = 0
 collision_mask = 0
+mass = 0.5
+inertia = 15.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Tail/TailBody2"]
 scale = Vector2(0.1, 0.1)
@@ -129,6 +130,8 @@ node_b = NodePath("../TailBody3")
 position = Vector2(-19, -3)
 collision_layer = 0
 collision_mask = 0
+mass = 0.5
+inertia = 15.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Tail/TailBody3"]
 scale = Vector2(0.1, 0.1)
@@ -147,6 +150,8 @@ node_b = NodePath("../TailBody4")
 position = Vector2(-27, -3)
 collision_layer = 0
 collision_mask = 0
+mass = 0.5
+inertia = 15.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Tail/TailBody4"]
 scale = Vector2(0.1, 0.1)
@@ -165,6 +170,8 @@ node_b = NodePath("../TailBody5")
 position = Vector2(-36, -3)
 collision_layer = 0
 collision_mask = 0
+mass = 0.5
+inertia = 15.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Tail/TailBody5"]
 scale = Vector2(0.1, 0.1)
@@ -182,6 +189,8 @@ node_b = NodePath("../TailBody6")
 position = Vector2(-45, -3)
 collision_layer = 0
 collision_mask = 0
+mass = 0.5
+inertia = 15.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Tail/TailBody6"]
 scale = Vector2(0.1, 0.1)
@@ -199,8 +208,35 @@ collision_mask = 4
 position = Vector2(0, -5)
 shape = SubResource("CircleShape2D_chexb")
 
+[node name="InteractArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
+position = Vector2(0, -5)
+shape = SubResource("CircleShape2D_chexb")
+
 [node name="GrabPoint" type="PinJoint2D" parent="."]
 node_a = NodePath("..")
 softness = 5.0
+
+[node name="Audio" type="Node2D" parent="."]
+
+[node name="BarkSound" type="AudioStreamPlayer2D" parent="Audio"]
+stream = ExtResource("3_qx3xb")
+
+[node name="JumpSound" type="AudioStreamPlayer2D" parent="Audio"]
+stream = ExtResource("4_0h8gg")
+
+[node name="Sprite" type="Node2D" parent="."]
+
+[node name="PointLight2D" type="PointLight2D" parent="Sprite"]
+texture = ExtResource("2_chexb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite"]
+z_index = 3
+position = Vector2(1.90735e-06, -0.999998)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_0h8gg")
 
 [connection signal="body_entered" from="HurtBox" to="." method="_on_hurt_box_body_entered"]
