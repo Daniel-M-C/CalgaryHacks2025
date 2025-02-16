@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://c0iqnvgkyy3vq"
-path="res://.godot/imported/bark.wav-1fb8cea99abc58d7d8833c6017eb8c83.sample"
+uid="uid://ewnyf07fga86"
+path="res://.godot/imported/machineamb1.wav-5292f2b6089eb2579d9aa6a446b4a875.sample"
 
 [deps]
 
-source_file="res://bark.wav"
-dest_files=["res://.godot/imported/bark.wav-1fb8cea99abc58d7d8833c6017eb8c83.sample"]
+source_file="res://Audio/machineamb1.wav"
+dest_files=["res://.godot/imported/machineamb1.wav-5292f2b6089eb2579d9aa6a446b4a875.sample"]
 
 [params]
 

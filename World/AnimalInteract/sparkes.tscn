@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bruuxa7166cbx"]
 
-[ext_resource type="Script" uid="uid://rf2cvpa0hals" path="res://sparkes.gd" id="1_1f18f"]
-[ext_resource type="Texture2D" uid="uid://bd4baj72jb54t" path="res://icon.svg" id="2_blsnk"]
+[ext_resource type="Script" uid="uid://rf2cvpa0hals" path="res://World/AnimalInteract/sparkes.gd" id="1_1f18f"]
+[ext_resource type="Texture2D" uid="uid://bd4baj72jb54t" path="res://Assets/icon.svg" id="2_blsnk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_blsnk"]
 
