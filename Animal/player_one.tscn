@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dp8qd1mngerdh" path="res://Assets/Sprites/IMG_0690.jpg" id="2_mn4xn"]
 [ext_resource type="AudioStream" uid="uid://c0iqnvgkyy3vq" path="res://Audio/bark.wav" id="3_qx3xb"]
 [ext_resource type="AudioStream" uid="uid://d0b7p4iktdpaa" path="res://Audio/realjump.wav" id="4_0h8gg"]
-[ext_resource type="AudioStream" uid="uid://gj7kpr540vlh" path="res://Audio/hurt.wav" id="4_4yms3"]
+[ext_resource type="AudioStream" uid="uid://bofh4b4t1g3pd" path="res://Audio/hurt.wav" id="4_4yms3"]
 [ext_resource type="Texture2D" uid="uid://b8omg07bnht3t" path="res://Assets/Sprites/Damage/damage1.png" id="5_4yms3"]
 [ext_resource type="Texture2D" uid="uid://db5n3hjjlstew" path="res://Assets/Sprites/Idle/Base1_closed.png" id="5_qgtrj"]
 [ext_resource type="Texture2D" uid="uid://0qfv17t0cdph" path="res://Assets/Sprites/Damage/damage2.png" id="6_x4kdc"]
@@ -34,33 +34,6 @@ height = 40.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oi0yx"]
 radius = 21.095
-
-[sub_resource type="Curve" id="Curve_oi0yx"]
-_data = [Vector2(0.0367647, 0.988764), 0.0, 0.0, 0, 0, Vector2(0.911765, 0), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_chexb"]
-curve = SubResource("Curve_oi0yx")
-
-[sub_resource type="Gradient" id="Gradient_qx3xb"]
-colors = PackedColorArray(0.827451, 0, 0, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_0h8gg"]
-gradient = SubResource("Gradient_qx3xb")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_oe7yg"]
-lifetime_randomness = 1.0
-particle_flag_disable_z = true
-emission_shape = 3
-emission_box_extents = Vector3(10, 4, 1)
-angle_min = -90.0
-angle_max = 90.0
-spread = 100.0
-gravity = Vector3(0, 50, 0)
-scale_max = 10.0
-color = Color(0.82881, 2.71939e-06, 5.77569e-07, 1)
-color_ramp = SubResource("GradientTexture1D_0h8gg")
-alpha_curve = SubResource("CurveTexture_chexb")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3pwu1"]
 
