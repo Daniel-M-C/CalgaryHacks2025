@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://i5nl44n31aam"]
+[gd_scene load_steps=33 format=4 uid="uid://i5nl44n31aam"]
 
 [ext_resource type="PackedScene" uid="uid://dwryfod28727j" path="res://World/InteractibleObjects/draggable_platform.tscn" id="1_16qqv"]
 [ext_resource type="Script" uid="uid://b5n1cdon6r4qt" path="res://World/camera_2d.gd" id="1_cyt26"]
@@ -14,6 +14,28 @@
 [ext_resource type="Texture2D" uid="uid://b8t1vs6px1qsn" path="res://Assets/Environment/tile_cobble.png" id="10_h3tjc"]
 [ext_resource type="Texture2D" uid="uid://dcknngv3cpc5p" path="res://Assets/Environment/tile_motherboard.png" id="11_hs2qd"]
 [ext_resource type="Texture2D" uid="uid://doiuuh5igjtsv" path="res://Assets/Environment/tilemap_tech.png" id="13_6syc8"]
+
+[sub_resource type="Gradient" id="Gradient_pwl74"]
+offsets = PackedFloat32Array(0, 0.956395, 1)
+colors = PackedColorArray(1, 1, 0, 1, 1, 1, 0.290698, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_syrwj"]
+gradient = SubResource("Gradient_pwl74")
+fill_to = Vector2(0, 0)
+
+[sub_resource type="Gradient" id="Gradient_homsn"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_pwl74"]
+gradient = SubResource("Gradient_homsn")
+fill_to = Vector2(0, 0)
+
+[sub_resource type="Gradient" id="Gradient_syrwj"]
+colors = PackedColorArray(0, 1, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_f5gnd"]
+gradient = SubResource("Gradient_syrwj")
+fill_to = Vector2(0, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_homsn"]
 size = Vector2(20, 500)
@@ -362,6 +384,17 @@ texture = ExtResource("2_qhfov")
 [node name="WaterLevel" type="Node2D" parent="."]
 position = Vector2(1355, -20)
 
+[node name="Plug3" parent="WaterLevel" node_paths=PackedStringArray("flow_puzzle") instance=ExtResource("5_8h63e")]
+position = Vector2(45, 135)
+rotation = -3.14159
+flow_puzzle = NodePath("../CanvasLayer/PipePuzzle")
+colour = 1
+
+[node name="Sprite2D2" type="Sprite2D" parent="WaterLevel/Plug3"]
+position = Vector2(-1.00002, 9.00001)
+scale = Vector2(0.870866, 0.107815)
+texture = SubResource("GradientTexture2D_syrwj")
+
 [node name="DraggablePlatform" parent="WaterLevel" instance=ExtResource("1_16qqv")]
 position = Vector2(-42, 363)
 lock_x = true
@@ -375,11 +408,21 @@ position = Vector2(143, 343)
 rotation = -1.5708
 flow_puzzle = NodePath("../CanvasLayer/PipePuzzle")
 
+[node name="Sprite2D2" type="Sprite2D" parent="WaterLevel/Plug"]
+position = Vector2(-1.00002, 9.00001)
+scale = Vector2(0.870866, 0.107815)
+texture = SubResource("GradientTexture2D_pwl74")
+
 [node name="Plug2" parent="WaterLevel" node_paths=PackedStringArray("flow_puzzle") instance=ExtResource("5_8h63e")]
 position = Vector2(-70, 199)
 rotation = -3.14159
 flow_puzzle = NodePath("../CanvasLayer/PipePuzzle")
 colour = 1
+
+[node name="Sprite2D2" type="Sprite2D" parent="WaterLevel/Plug2"]
+position = Vector2(-1.00002, 9.00001)
+scale = Vector2(0.870866, 0.107815)
+texture = SubResource("GradientTexture2D_f5gnd")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="WaterLevel"]
 layer = -2
@@ -429,7 +472,7 @@ max_y = 300.0
 min_y = 200.0
 
 [node name="WaterWall" type="StaticBody2D" parent="WaterLevel"]
-position = Vector2(678, 333)
+position = Vector2(678, 1000)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WaterLevel/WaterWall"]
 shape = SubResource("RectangleShape2D_homsn")
