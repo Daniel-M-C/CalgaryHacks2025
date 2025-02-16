@@ -156,11 +156,9 @@ func interact(action_object: Node):
 		pass
 	pass
 
-
 func _on_animated_sprite_2d_animation_finished():
 	still_jumping = false
 	pass 
-
 
 func _on_hurt_box_body_entered(body):
 	if body.get("damage"):

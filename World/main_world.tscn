@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://i5nl44n31aam"]
+[gd_scene load_steps=24 format=4 uid="uid://i5nl44n31aam"]
 
 [ext_resource type="PackedScene" uid="uid://dwryfod28727j" path="res://World/InteractibleObjects/draggable_platform.tscn" id="1_16qqv"]
 [ext_resource type="Script" uid="uid://b5n1cdon6r4qt" path="res://World/camera_2d.gd" id="1_cyt26"]
@@ -15,7 +15,10 @@
 [ext_resource type="Texture2D" uid="uid://mvjft0ealv85" path="res://Assets/Environment/tilemap_tech.png" id="13_6syc8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8h63e"]
-size = Vector2(40, 70)
+size = Vector2(200, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6syc8"]
+size = Vector2(200, 11)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hs2qd"]
 texture = ExtResource("10_h3tjc")
@@ -427,12 +430,41 @@ position = Vector2(446.5, 490)
 position = Vector2(646.5, 490)
 
 [node name="CameraTrigger" type="Area2D" parent="JumpingLevel"]
-position = Vector2(846, 439)
+position = Vector2(847, 390)
 collision_layer = 65536
 collision_mask = 65536
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="JumpingLevel/CameraTrigger"]
+position = Vector2(-53, -50)
+rotation = -1.5708
 shape = SubResource("RectangleShape2D_8h63e")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="JumpingLevel/CameraTrigger"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="JumpingLevel/CameraTrigger/StaticBody2D"]
+position = Vector2(-32.5, -50)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_6syc8")
+one_way_collision = true
+
+[node name="CameraTrigger2" type="Area2D" parent="JumpingLevel"]
+position = Vector2(1870, 348)
+collision_layer = 65536
+collision_mask = 65536
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="JumpingLevel/CameraTrigger2"]
+position = Vector2(-33, -41)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_8h63e")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="JumpingLevel/CameraTrigger2"]
+position = Vector2(22, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="JumpingLevel/CameraTrigger2/StaticBody2D2"]
+position = Vector2(-32.5, -50)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_6syc8")
+one_way_collision = true
 
 [node name="PlayerOne" parent="." instance=ExtResource("2_rocas")]
 position = Vector2(71, 439)
@@ -468,4 +500,8 @@ position = Vector2(103, -37)
 tile_map_data = PackedByteArray("AAD4/wQAAAAAAAAAAAADAAQAAAAAAAAAAAAOAAIAAAAAAAAAAAAfAAEAAAAAAAAAAAApAAIAAAAAAAAAAAArAAIAAAAAAAAAAAAOAAMAAAAAAAAAAAAMAAMAAAAAAAAAAAADAAUAAAAAAAAAAAAAAAYAAAAAAAAAAAD6/wYAAAAAAAAAAAD5/wYAAAAAAAAAAAApAAwAAAAFAAUAAAAqAAwAAAADAAMAAAD//wwAAAABAAMAAAAmAAsAAAADAAMAAAD4/wgAAAAAAAUAAAAPAA0AAAAAAAUAAAAQAAsAAAADAAMAAAAUAA0AAAABAAMAAAAbAAoAAAADAAUAAAAhAAwAAAADAAUAAAAiAAwAAAAFAAUAAAAjAAwAAAADAAUAAAAlAAsAAAADAAMAAAAmAAoAAAABAAMAAAApAAoAAAAAAAUAAAAqAAoAAAADAAUAAAAtAAwAAAAFAAUAAAD7/wcAAAAAAAAAAAD8/wcAAAAAAAAAAAD9/wcAAAAAAAAAAAD//wUAAAAAAAAAAAD//wcAAAAAAAAAAAAAAAcAAAAAAAAAAAABAAYAAAAAAAAAAAADAAYAAAAAAAAAAAAEAAYAAAAAAAAAAAAFAAQAAAAAAAAAAAAHAAMAAAAAAAAAAAAKAAMAAAAAAAAAAAALAAUAAAAAAAAAAAAMAAQAAAAAAAAAAAANAAQAAAAAAAAAAAAOAAQAAAAAAAAAAAAPAAIAAAAAAAAAAAAQAAIAAAAAAAAAAAAQAAQAAAAAAAAAAAARAAIAAAAAAAAAAAASAAEAAAAAAAAAAAASAAMAAAAAAAAAAAATAAMAAAAAAAAAAAAUAAEAAAAAAAAAAAAUAAMAAAAAAAAAAAAXAAIAAAAAAAAAAAAZAAAAAAAAAAAAAAAZAAIAAAAAAAAAAAAaAAAAAAAAAAAAAAAbAAIAAAAAAAAAAAAcAAIAAAAAAAAAAAAdAAEAAAAAAAAAAAAfAAIAAAAAAAAAAAAjAAEAAAAAAAAAAAAmAAEAAAAAAAAAAAAnAAEAAAAAAAAAAAAoAAIAAAAAAAAAAAApAAMAAAAAAAAAAAAqAAMAAAAAAAAAAAArAAMAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_f5gnd")
 
+[node name="Plug" parent="ParallaxBackground2/ForeLayer" instance=ExtResource("5_8h63e")]
+position = Vector2(714.5, 87.5)
+
 [connection signal="body_entered" from="JumpingLevel/CameraTrigger" to="Camera2D" method="_on_camera_trigger_body_entered"]
+[connection signal="body_entered" from="JumpingLevel/CameraTrigger2" to="Camera2D" method="_on_camera_trigger_body_entered"]
