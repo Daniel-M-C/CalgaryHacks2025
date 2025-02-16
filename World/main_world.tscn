@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://i5nl44n31aam"]
+[gd_scene load_steps=7 format=3 uid="uid://i5nl44n31aam"]
 
 [ext_resource type="PackedScene" uid="uid://dwryfod28727j" path="res://World/InteractibleObjects/draggable_platform.tscn" id="1_16qqv"]
 [ext_resource type="PackedScene" uid="uid://ctkpfei25vhd4" path="res://Animal/player_one.tscn" id="2_rocas"]
 [ext_resource type="PackedScene" uid="uid://bhsrdhvqho0uw" path="res://World/AnimalInteract/cable.tscn" id="3_r6447"]
 [ext_resource type="PackedScene" uid="uid://cvl2y5enk7w5q" path="res://World/AnimalInteract/plug.tscn" id="5_8h63e"]
 [ext_resource type="PackedScene" uid="uid://bl62rm785ghlx" path="res://World/InteractibleObjects/pipe_puzzle.tscn" id="5_8rdcw"]
+[ext_resource type="PackedScene" uid="uid://e2smnpjo0mfw" path="res://water.tscn" id="6_8h63e"]
 
 [node name="MainWorld" type="Node2D"]
 
@@ -19,15 +20,20 @@ position = Vector2(393, 369)
 position = Vector2(402, 508)
 scale = Vector2(15.5215, 0.871832)
 lock_y = true
+max_x = 1e+07
+min_x = -1e+08
 
 [node name="Cable" parent="." instance=ExtResource("3_r6447")]
 position = Vector2(484, 232)
 
-[node name="Plug" parent="." node_paths=PackedStringArray("start_cable", "flow_puzzle") instance=ExtResource("5_8h63e")]
+[node name="Plug" parent="." node_paths=PackedStringArray("flow_puzzle") instance=ExtResource("5_8h63e")]
 position = Vector2(624, 403)
-start_cable = NodePath("../Cable")
 flow_puzzle = NodePath("../CanvasLayer/PipePuzzle")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PipePuzzle" parent="CanvasLayer" instance=ExtResource("5_8rdcw")]
+
+[node name="water" parent="." instance=ExtResource("6_8h63e")]
+position = Vector2(578, 661)
+current_state = 1

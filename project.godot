@@ -49,6 +49,7 @@ action={
 2d_physics/layer_2="AnimalAction"
 2d_physics/layer_3="AnimalCarry"
 2d_physics/layer_4="PlayerHurter"
+2d_physics/layer_5="Water"
 
 [rendering]
 
