@@ -83,7 +83,7 @@ func _physics_process(delta):
 			drowning_time -= 1 * delta
 		else:
 			take_damage(10)
-			drowning_time = 5
+			drowning_time = 2
 			pass
 		
 
