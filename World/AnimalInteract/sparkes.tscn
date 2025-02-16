@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bruuxa7166cbx"]
+[gd_scene load_steps=6 format=3 uid="uid://bruuxa7166cbx"]
 
 [ext_resource type="Script" uid="uid://rf2cvpa0hals" path="res://World/AnimalInteract/sparkes.gd" id="1_1f18f"]
 [ext_resource type="Texture2D" uid="uid://bd4baj72jb54t" path="res://Assets/icon.svg" id="2_blsnk"]
@@ -17,6 +17,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ofwlg"]
+size = Vector2(60, 10)
+
 [node name="Sparkes" type="Area2D"]
 collision_layer = 8
 collision_mask = 0
@@ -28,3 +31,9 @@ shape = SubResource("RectangleShape2D_blsnk")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.6, 0.1)
 sprite_frames = SubResource("SpriteFrames_8mq5r")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_ofwlg")
