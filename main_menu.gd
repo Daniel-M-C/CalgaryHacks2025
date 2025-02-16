@@ -4,7 +4,6 @@ const MAIN_WORLD = preload("res://World/main_world.tscn")
 
 func _on_start_pressed():
 	get_tree().change_scene_to_packed(MAIN_WORLD)
-	pass # Replace with function body.
 
 func _on_quit_pressed():
 	$MarginContainer/VBoxContainer/HBoxContainer2.set_process(true)
@@ -13,9 +12,7 @@ func _on_quit_pressed():
 func _on_nevermind_pressed():
 	$MarginContainer/VBoxContainer/HBoxContainer2.set_process(false)
 	$MarginContainer/VBoxContainer/HBoxContainer2.visible = false
-	pass # Replace with function body.
 	
 func _on_leave_pressed():
 	get_tree().quit()
-
-	pass # Replace with function body.
+	

@@ -20,8 +20,6 @@ script = ExtResource("1_cyt26")
 
 [node name="PlayerOne" parent="." instance=ExtResource("2_rocas")]
 position = Vector2(71, 439)
-collision_layer = 65552
-collision_mask = 17
 
 [node name="JumpingLevel" type="Node2D" parent="."]
 
