@@ -29,5 +29,25 @@ start_cable = NodePath("../Cable")
 flow_puzzle = NodePath("../CanvasLayer/PipePuzzle")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -2
 
 [node name="PipePuzzle" parent="CanvasLayer" instance=ExtResource("5_8rdcw")]
+
+[node name="JumpingLevel" type="Node2D" parent="."]
+
+[node name="Start" type="Marker2D" parent="JumpingLevel"]
+position = Vector2(1154, 191)
+gizmo_extents = 461.5
+
+[node name="End" type="Marker2D" parent="JumpingLevel"]
+position = Vector2(2306, 197)
+gizmo_extents = 456.6
+
+[node name="DraggablePlatform" parent="JumpingLevel" instance=ExtResource("1_16qqv")]
+position = Vector2(1400, 550)
+
+[node name="DraggablePlatform2" parent="JumpingLevel" instance=ExtResource("1_16qqv")]
+position = Vector2(1600, 550)
+
+[node name="DraggablePlatform3" parent="JumpingLevel" instance=ExtResource("1_16qqv")]
+position = Vector2(1800, 550)
