@@ -1,6 +1,7 @@
 extends StaticBody2D
-@export var activated = false
 @export var start_cable : Node
+@export var flow_puzzle : Node
+
 
 func _ready():
 	if start_cable:
@@ -9,9 +10,7 @@ func _ready():
 func connect_plug(cable):
 	print(cable)
 	$PinJoint2D.set_node_b(cable.get_path())
-	activated = true
 	
 	pass
 func disconnect_plug():
 	$PinJoint2D.set_node_b("")
-	activated = false

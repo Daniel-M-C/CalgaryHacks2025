@@ -23,8 +23,10 @@ lock_y = true
 [node name="Cable" parent="." instance=ExtResource("3_r6447")]
 position = Vector2(484, 232)
 
-[node name="Plug" parent="." instance=ExtResource("5_8h63e")]
-position = Vector2(612, 45)
+[node name="Plug" parent="." node_paths=PackedStringArray("start_cable", "flow_puzzle") instance=ExtResource("5_8h63e")]
+position = Vector2(624, 403)
+start_cable = NodePath("../Cable")
+flow_puzzle = NodePath("../CanvasLayer/PipePuzzle")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
