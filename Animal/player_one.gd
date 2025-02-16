@@ -11,6 +11,7 @@ var still_jumping = false
 var in_water = false
 var drowning_time = 5
 var temp_sprite = ""
+var caotye_time = 0.2
 
 signal Died
 @onready var sprite = $Sprite/AnimatedSprite2D
@@ -27,6 +28,7 @@ func _physics_process(delta):
 	
 	
 	if not is_on_floor():
+		caotye_time -= 1 *delta
 		not_landed_yet = true
 		velocity += get_gravity() * delta
 		if velocity.y > 0:
@@ -41,8 +43,9 @@ func _physics_process(delta):
 		sprite.play("fall")
 		not_landed_yet = false
 
-	if Input.is_action_just_pressed("up") and (is_on_floor() or in_water):
+	if Input.is_action_just_pressed("up") and ((is_on_floor() or in_water) or caotye_time > 0):
 		velocity.y = JUMP_VELOCITY
+		caotye_time = -10
 		$Audio/JumpSound.play()
 		if temp_sprite == "":
 			sprite.play("jump")
@@ -63,10 +66,12 @@ func _physics_process(delta):
 			sprite.scale.x = -1
 			$Tail.position.x = -2.0
 	else:
-		if is_on_floor() and Input.is_action_pressed("down") and temp_sprite == "":
-			sprite.play("sit")
-		elif is_on_floor() and temp_sprite == "":
-			sprite.play("idle")
+		if is_on_floor():
+			if Input.is_action_pressed("down") and temp_sprite == "":
+				sprite.play("sit")
+			elif temp_sprite == "":
+				sprite.play("idle")
+			caotye_time = 0.2
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	if in_water:
 		velocity.x /= 1.25

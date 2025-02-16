@@ -17,9 +17,9 @@ var drag_start_position : Vector2 = Vector2.ZERO
 @onready var min_y_marker: Marker2D = $MinY
 
 
-const SERVER_A = preload("res://Assets/Environment/server_A.png")
-const SERVER_B = preload("res://Assets/Environment/server_B.png")
-const SERVER_C = preload("res://Assets/Environment/server_C.png")
+const SERVER_A = preload("res://Assets/Environment/ram_platform.png")
+const SERVER_B = preload("res://Assets/Environment/gategreen.png")
+const SERVER_C = preload("res://Assets/Environment/gatered.png")
 const SERVER_D = preload("res://Assets/Environment/server_D.png")
 
 @onready var sprite: Sprite2D = $Sprite
