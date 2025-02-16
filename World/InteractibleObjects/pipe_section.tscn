@@ -24,7 +24,6 @@ action_mode = 0
 flat = true
 expand_icon = true
 script = ExtResource("2_dqvcp")
-color = null
 
 [node name="FullIndicator" type="TextureRect" parent="."]
 visible = false
@@ -48,6 +47,7 @@ anchor_bottom = 0.8
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_lxmeo")
+expand_mode = 3
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
 [connection signal="resized" from="." to="." method="_on_resized"]
