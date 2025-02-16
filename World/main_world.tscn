@@ -14,9 +14,10 @@ size = Vector2(40, 70)
 
 [node name="MainWorld" type="Node2D"]
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("puzzle_canvas_layer")]
 offset = Vector2(576, 324)
 script = ExtResource("1_cyt26")
+puzzle_canvas_layer = NodePath("../WaterLevel/CanvasLayer")
 
 [node name="PlayerOne" parent="." instance=ExtResource("2_rocas")]
 position = Vector2(71, 439)
