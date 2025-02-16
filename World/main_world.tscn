@@ -82,13 +82,14 @@ lock_x = true
 position = Vector2(402, 508)
 scale = Vector2(15.5215, 0.871832)
 lock_y = true
+max_x = 1e+07
+min_x = -1e+08
 
 [node name="Cable" parent="WaterLevel" instance=ExtResource("3_r6447")]
 position = Vector2(484, 232)
 
 [node name="Plug" parent="WaterLevel" node_paths=PackedStringArray("start_cable", "flow_puzzle") instance=ExtResource("5_8h63e")]
 position = Vector2(624, 403)
-start_cable = NodePath("../Cable")
 flow_puzzle = NodePath("../CanvasLayer/PipePuzzle")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="WaterLevel"]
