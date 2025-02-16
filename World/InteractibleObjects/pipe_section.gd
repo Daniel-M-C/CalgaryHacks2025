@@ -1,15 +1,31 @@
 @tool
 extends Button
 
+# region color
+@onready var color_indicator: TextureRect = $ColorIndicator
+
 enum PIPE_COLOR {
 	RED,
 	GREEN,
 	YELLOW
 }
+
 @export var color : PIPE_COLOR = PIPE_COLOR.RED:
 	set(val):
 		color = val
+		if not is_inside_tree():
+			await tree_entered
+			await get_tree().process_frame
 		
+		match color:
+			PIPE_COLOR.RED :
+				color_indicator.self_modulate = Color.RED
+			PIPE_COLOR.GREEN :
+				color_indicator.self_modulate = Color.GREEN
+			PIPE_COLOR.YELLOW :
+				color_indicator.self_modulate = Color.YELLOW
+
+# end region 
 
 ## As up right down left
 @export var default_used_ports : Array[bool] = [false, false, false, false]
@@ -109,7 +125,8 @@ func _on_resized():
 	pivot_offset = size/2 
 
 func _on_pressed() -> void:
-	rotate_once()
+	if get_parent().is_color_active(color):
+		rotate_once()
 	
 func rotate_once() :
 	

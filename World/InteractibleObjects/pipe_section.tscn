@@ -37,7 +37,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_lxmeo")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="ColorIndicator" type="TextureRect" parent="."]
 z_index = -1
 layout_mode = 1
 anchors_preset = -1

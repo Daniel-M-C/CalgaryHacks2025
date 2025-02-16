@@ -4,6 +4,18 @@ extends GridContainer
 @export var start_pipe : Button
 @export var end_pipe : Button
 
+enum PIPE_COLOR {
+	RED,
+	GREEN,
+	YELLOW
+}
+
+@export var active_color : PIPE_COLOR = PIPE_COLOR.RED:
+	set(val):
+		active_color = val
+		
+
+
 ## Resets the filled water when changed
 @export var reset_dummy : bool = false:
 	set(val):
@@ -23,3 +35,9 @@ func _ready() -> void:
 		# re-runs setter because it wasn't working
 		#i.starting_rotation = i.starting_rotation
 	pass
+	
+func is_color_active(color : int):
+	## color refs to pipe color.
+	# could just check, but functions are nice.
+	return color == active_color
+	
