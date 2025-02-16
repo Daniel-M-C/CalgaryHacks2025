@@ -12,6 +12,7 @@ var in_water = false
 var drowning_time = 5
 var temp_sprite = ""
 
+signal Died
 @onready var sprite = $Sprite/AnimatedSprite2D
 
 func _ready():
@@ -92,6 +93,13 @@ func take_damage(damage):
 	temp_sprite = "" 
 	if hp < 40:
 		$Sprite/GPUParticles2D.emitting = true
+	
+	if hp < 0 : 
+		# TODO play an animation maybe?
+		Died.emit()
+		hp = 100
+		$Sprite/GPUParticles2D.emitting = false
+		pass
 		
 func heal_health(amount):
 	if amount:
