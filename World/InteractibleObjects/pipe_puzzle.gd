@@ -44,6 +44,7 @@ func finish_puzzle():
 func reset_stuff():
 	for i in get_children():
 		if is_instance_of(i, PipeSection):
+			i.full = false
 			i.PipeDirectionChanged.connect(re_flow_water)
 			
 			if i.starting_rotation != 0 :

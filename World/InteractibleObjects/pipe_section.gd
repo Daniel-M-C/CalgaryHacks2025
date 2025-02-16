@@ -117,8 +117,8 @@ var texture : Texture2D :
 							get_neighbour(i).full = true
 		
 			await get_tree().process_frame
-			full_indicator.visible = full
 			IsFull.emit()
+		full_indicator.visible = full
 
 func _ready():
 	# runs the setter

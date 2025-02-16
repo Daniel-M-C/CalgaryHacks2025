@@ -194,9 +194,10 @@ pipe_type = 1
 custom_minimum_size = Vector2(0, 78)
 layout_mode = 2
 icon = ExtResource("2_3h88w")
-default_used_ports = Array[bool]([true, true, false, true])
-true_used_prots = Array[bool]([true, true, false, true])
+default_used_ports = Array[bool]([false, true, true, true])
+true_used_prots = Array[bool]([false, true, true, true])
 pipe_type = 3
+starting_rotation = 3
 
 [node name="PipeSection20" parent="." instance=ExtResource("1_g2en0")]
 custom_minimum_size = Vector2(0, 78)
@@ -276,6 +277,7 @@ layout_mode = 2
 icon = ExtResource("6_igqeh")
 default_used_ports = Array[bool]([true, false, false, false])
 true_used_prots = Array[bool]([true, false, false, false])
+starting_rotation = 2
 
 [node name="PipeSection50" parent="." instance=ExtResource("1_g2en0")]
 visible = false
