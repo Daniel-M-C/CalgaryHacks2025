@@ -1,8 +1,11 @@
 @tool
 extends GridContainer
+class_name PipePuzzle
 
-@export var start_pipe : Button
-@export var end_pipe : Button
+signal PuzzleFinished
+
+@export var start_pipe : PipeSection
+@export var end_pipe : PipeSection
 
 enum PIPE_COLOR {
 	RED,
@@ -31,7 +34,11 @@ enum PIPE_COLOR {
 			start_pipe.full = true
 
 func _ready() -> void:
+	end_pipe.IsFull.connect(finish_puzzle)
 	pass
+
+func finish_puzzle():
+	PuzzleFinished.emit()
 
 func reset_stuff():
 	for i in get_children():

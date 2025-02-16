@@ -2,6 +2,7 @@
 extends Button
 class_name PipeSection
 
+signal IsFull
 signal PipeDirectionChanged
 # region color
 @onready var color_indicator: TextureRect = $ColorIndicator
@@ -117,6 +118,7 @@ var texture : Texture2D :
 		
 			await get_tree().process_frame
 			full_indicator.visible = full
+			IsFull.emit()
 
 func _ready():
 	# runs the setter
