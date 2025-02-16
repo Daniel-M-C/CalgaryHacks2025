@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dp8qd1mngerdh" path="res://Assets/Sprites/IMG_0690.jpg" id="2_mn4xn"]
 [ext_resource type="AudioStream" uid="uid://c0iqnvgkyy3vq" path="res://Audio/bark.wav" id="3_qx3xb"]
 [ext_resource type="AudioStream" uid="uid://d0b7p4iktdpaa" path="res://Audio/realjump.wav" id="4_0h8gg"]
-[ext_resource type="AudioStream" uid="uid://bofh4b4t1g3pd" path="res://Audio/hurt.wav" id="4_4yms3"]
+[ext_resource type="AudioStream" uid="uid://gj7kpr540vlh" path="res://Audio/hurt.wav" id="4_4yms3"]
 [ext_resource type="Texture2D" uid="uid://b8omg07bnht3t" path="res://Assets/Sprites/Damage/damage1.png" id="5_4yms3"]
 [ext_resource type="Texture2D" uid="uid://db5n3hjjlstew" path="res://Assets/Sprites/Idle/Base1_closed.png" id="5_qgtrj"]
 [ext_resource type="Texture2D" uid="uid://0qfv17t0cdph" path="res://Assets/Sprites/Damage/damage2.png" id="6_x4kdc"]

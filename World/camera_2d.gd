@@ -37,7 +37,7 @@ func _process(delta: float) -> void:
 	if global_position.x > level_position_offset - 100 \
 		and puzzle_node:
 			puzzle_node.visible = true
-			puzzle_node.offset.x = level_position_offset - global_position.x
+			puzzle_node.get_parent().offset.x = level_position_offset - global_position.x
 
 
 # Game manager stuff
