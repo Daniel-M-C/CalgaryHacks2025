@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://pbf6b5olci6q" path="res://Assets/Environment/pipe_two_straight.png" id="4_5vxyr"]
 
 [node name="PipePuzzle" type="GridContainer" node_paths=PackedStringArray("start_pipe")]
+modulate = Color(1, 1, 1, 0.666667)
 anchors_preset = -1
 anchor_left = 0.544
 anchor_right = 1.0
@@ -24,7 +25,6 @@ start_pipe = NodePath("PipeSection0")
 custom_minimum_size = Vector2(0, 85)
 layout_mode = 2
 icon = ExtResource("2_0jhvd")
-color = 0
 default_used_ports = Array[bool]([true, true, false, false])
 pipe_type = 1
 
@@ -32,7 +32,6 @@ pipe_type = 1
 custom_minimum_size = Vector2(0, 84)
 layout_mode = 2
 icon = ExtResource("2_3h88w")
-color = 0
 default_used_ports = Array[bool]([false, true, true, true])
 pipe_type = 3
 starting_rotation = 2
@@ -57,129 +56,103 @@ starting_rotation = 1
 [node name="PipeSection5" parent="." instance=ExtResource("1_g2en0")]
 custom_minimum_size = Vector2(0, 84)
 layout_mode = 2
-color = 0
 
 [node name="PipeSection6" parent="." instance=ExtResource("1_g2en0")]
 custom_minimum_size = Vector2(0, 84)
 layout_mode = 2
-color = 0
 
 [node name="PipeSection7" parent="." instance=ExtResource("1_g2en0")]
 custom_minimum_size = Vector2(0, 85)
 layout_mode = 2
-color = 0
 
 [node name="PipeSection8" parent="." instance=ExtResource("1_g2en0")]
 custom_minimum_size = Vector2(0, 84)
 layout_mode = 2
-color = 0
 
 [node name="PipeSection9" parent="." instance=ExtResource("1_g2en0")]
 custom_minimum_size = Vector2(0, 84)
 layout_mode = 2
-color = 0
 
 [node name="PipeSection10" parent="." instance=ExtResource("1_g2en0")]
 custom_minimum_size = Vector2(0, 84)
 layout_mode = 2
-color = 0
 
 [node name="PipeSection11" parent="." instance=ExtResource("1_g2en0")]
 custom_minimum_size = Vector2(0, 84)
 layout_mode = 2
-color = 0
 
 [node name="PipeSection12" parent="." instance=ExtResource("1_g2en0")]
 custom_minimum_size = Vector2(0, 84)
 layout_mode = 2
-color = 0
 
 [node name="PipeSection13" parent="." instance=ExtResource("1_g2en0")]
 custom_minimum_size = Vector2(0, 85)
 layout_mode = 2
-color = 0
 
 [node name="PipeSection14" parent="." instance=ExtResource("1_g2en0")]
 custom_minimum_size = Vector2(0, 84)
 layout_mode = 2
-color = 0
 
 [node name="PipeSection15" parent="." instance=ExtResource("1_g2en0")]
 custom_minimum_size = Vector2(0, 84)
 layout_mode = 2
-color = 0
 
 [node name="PipeSection16" parent="." instance=ExtResource("1_g2en0")]
 custom_minimum_size = Vector2(0, 84)
 layout_mode = 2
-color = 0
 
 [node name="PipeSection17" parent="." instance=ExtResource("1_g2en0")]
 custom_minimum_size = Vector2(0, 84)
 layout_mode = 2
-color = 0
 
 [node name="PipeSection18" parent="." instance=ExtResource("1_g2en0")]
 custom_minimum_size = Vector2(0, 84)
 layout_mode = 2
-color = 0
 
 [node name="PipeSection19" parent="." instance=ExtResource("1_g2en0")]
 custom_minimum_size = Vector2(0, 85)
 layout_mode = 2
-color = 0
 
 [node name="PipeSection20" parent="." instance=ExtResource("1_g2en0")]
 custom_minimum_size = Vector2(0, 84)
 layout_mode = 2
-color = 0
 
 [node name="PipeSection21" parent="." instance=ExtResource("1_g2en0")]
 custom_minimum_size = Vector2(0, 84)
 layout_mode = 2
-color = 0
 
 [node name="PipeSection22" parent="." instance=ExtResource("1_g2en0")]
 custom_minimum_size = Vector2(0, 84)
 layout_mode = 2
-color = 0
 
 [node name="PipeSection23" parent="." instance=ExtResource("1_g2en0")]
 custom_minimum_size = Vector2(0, 84)
 layout_mode = 2
-color = 0
 
 [node name="PipeSection24" parent="." instance=ExtResource("1_g2en0")]
 custom_minimum_size = Vector2(0, 84)
 layout_mode = 2
-color = 0
 
 [node name="PipeSection25" parent="." instance=ExtResource("1_g2en0")]
 custom_minimum_size = Vector2(0, 85)
 layout_mode = 2
-color = 0
 
 [node name="PipeSection26" parent="." instance=ExtResource("1_g2en0")]
 custom_minimum_size = Vector2(0, 84)
 layout_mode = 2
-color = 0
 
 [node name="PipeSection27" parent="." instance=ExtResource("1_g2en0")]
 custom_minimum_size = Vector2(0, 84)
 layout_mode = 2
-color = 0
 
 [node name="PipeSection28" parent="." instance=ExtResource("1_g2en0")]
 custom_minimum_size = Vector2(0, 84)
 layout_mode = 2
-color = 0
 
 [node name="PipeSection29" parent="." instance=ExtResource("1_g2en0")]
 custom_minimum_size = Vector2(0, 84)
 layout_mode = 2
-color = 0
 
 [node name="PipeSection30" parent="." instance=ExtResource("1_g2en0")]
 custom_minimum_size = Vector2(0, 84)
 layout_mode = 2
-color = 0

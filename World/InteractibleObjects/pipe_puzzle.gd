@@ -1,8 +1,12 @@
 @tool
 extends GridContainer
+class_name PipePuzzle
 
-@export var start_pipe : Button
-@export var end_pipe : Button
+## Emmited when the puzzle is finished
+signal PuzzleFinished
+
+@export var start_pipe : PipeSection
+@export var end_pipe : PipeSection
 
 enum PIPE_COLOR {
 	RED,
@@ -34,6 +38,8 @@ func _ready() -> void:
 	#for i in get_children():
 		# re-runs setter because it wasn't working
 		#i.starting_rotation = i.starting_rotation
+	if end_pipe:
+		end_pipe.IsFull.connect(finish_puzzle)
 	pass
 	
 func is_color_active(color : int):
@@ -41,3 +47,10 @@ func is_color_active(color : int):
 	# could just check, but functions are nice.
 	return color == active_color
 	
+	
+func finish_puzzle():
+	# Should somehow show that things are done
+	modulate = Color.hex(0xffffffaa)
+	PuzzleFinished.emit()
+	# disable moving of pipes
+	active_color = -1

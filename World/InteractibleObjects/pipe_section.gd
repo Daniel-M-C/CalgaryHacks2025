@@ -1,5 +1,6 @@
 @tool
 extends Button
+class_name PipeSection
 
 # region color
 @onready var color_indicator: TextureRect = $ColorIndicator
@@ -91,6 +92,9 @@ var texture : Texture2D :
 		for i in range(val):
 			rotate_once()
 
+
+signal IsFull
+
 @onready var full_indicator: TextureRect = $FullIndicator
 
 ## Done as an int so that it counts how many are filling it
@@ -113,6 +117,7 @@ var texture : Texture2D :
 		
 			await get_tree().process_frame
 			full_indicator.visible = full
+			IsFull.emit()
 
 func _ready():
 	# runs the setter
