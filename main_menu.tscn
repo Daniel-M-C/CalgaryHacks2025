@@ -1,12 +1,12 @@
 [gd_scene load_steps=15 format=3 uid="uid://j81n70ulqdnl"]
 
-[ext_resource type="Texture2D" uid="uid://c0c4k43fpbac0" path="res://Assets/heretic-menu-game.png" id="1_06t4h"]
-[ext_resource type="Script" path="res://main_menu.gd" id="1_7vrkn"]
-[ext_resource type="Texture2D" uid="uid://bn7ap3hbi6fl6" path="res://Assets/title screen animated/Untitled_Artwork-5.png" id="2_qe12f"]
-[ext_resource type="Texture2D" uid="uid://jrfau1kuys65" path="res://Assets/title screen animated/Untitled_Artwork-4.png" id="3_8qtwp"]
-[ext_resource type="Texture2D" uid="uid://cbo6wejds8fji" path="res://Assets/title screen animated/Untitled_Artwork-3.png" id="4_dy7ct"]
-[ext_resource type="Texture2D" uid="uid://buy8ya086xrwr" path="res://Assets/title screen animated/Untitled_Artwork-2.png" id="5_0o4t1"]
-[ext_resource type="Texture2D" uid="uid://8xuwy2ghualk" path="res://Assets/title screen animated/Untitled_Artwork-1.png" id="6_0k4wn"]
+[ext_resource type="Texture2D" uid="uid://3awjawp5a12h" path="res://Assets/heretic-menu-game.png" id="1_06t4h"]
+[ext_resource type="Script" uid="uid://08xiuy8rweiq" path="res://main_menu.gd" id="1_7vrkn"]
+[ext_resource type="Texture2D" uid="uid://dq3a81ssmptcj" path="res://Assets/title screen animated/Untitled_Artwork-5.png" id="2_qe12f"]
+[ext_resource type="Texture2D" uid="uid://cohf16ssj7x22" path="res://Assets/title screen animated/Untitled_Artwork-4.png" id="3_8qtwp"]
+[ext_resource type="Texture2D" uid="uid://da7xn5txdsbxs" path="res://Assets/title screen animated/Untitled_Artwork-3.png" id="4_dy7ct"]
+[ext_resource type="Texture2D" uid="uid://b26kbdjxn1acf" path="res://Assets/title screen animated/Untitled_Artwork-2.png" id="5_0o4t1"]
+[ext_resource type="Texture2D" uid="uid://b2m1s00pqamv" path="res://Assets/title screen animated/Untitled_Artwork-1.png" id="6_0k4wn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_j5v2v"]
 animations = [{
